@@ -1,0 +1,552 @@
+/* CSS tổng quan */
+* {
+    font-family: Playfair Display,serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+  }
+  h2 {
+    font-size: 46px;
+    line-height: 64px;
+    color: #222;
+    text-align:center;
+  }
+  h4 {
+    font-size: 30px;
+    color: #222;
+  }
+  h6 {
+    font-weight: 700;
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+    color: #466b52;
+  }
+  .section-p1 {
+    padding:40px 80px;
+
+  }
+  .section-m1 {
+    margin: 40px 0;
+  }
+  button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border:none;
+    outline:none;
+    transition: 0.2s;
+  }
+  button.white {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #ffffff;
+    background-color:transparent;
+    cursor: pointer;
+    border:1px solid #fff;
+    outline:none;
+    transition: 0.2s;
+  }
+
+  body {
+    width: 100%;
+  }
+  /* Header */
+  #header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #ffffff;
+    box-shadow:  0 5px 15px rgba(0,0,0,0.06);;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  #navbar {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  }
+  #navbar li {
+    list-style: none;
+    padding:0 20px;
+    position:relative;
+  }
+  #navbar li a {
+    text-decoration: none ;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition:  0.3s ease;
+  }
+  #navbar li a:hover,
+  #navbar li a.active {
+    color:#757070;
+  }
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content:"";
+    width: 30%;
+    background: #757070;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+  }
+  /* banner*/
+  #hero  {
+    background: url('https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/12/STARGIRLS_MAIN-BANNER_PC-2-1536x1023.png');
+    background-attachment: fixed;
+    height: 600px;
+    background-size: cover;
+    padding: 0 80px;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }  
+  
+
+  #hero h4 {
+    padding-bottom: 15px;
+    color: #333;
+    position: relative; /* Để chữ nằm trên lớp phủ */
+    z-index: 2; /* Đặt nội dung trên lớp phủ */
+  }
+  #hero h1 {
+    color: #6e6f6e;
+    position: relative; /* Để chữ nằm trên lớp phủ */
+    z-index: 2; /* Đặt nội dung trên lớp phủ */
+  }
+  #hero h2 {
+    color:#000000;
+    position: relative; /* Để chữ nằm trên lớp phủ */
+    z-index: 2; /* Đặt nội dung trên lớp phủ */
+  }
+  #hero p {
+    color: #333;
+    font-size: 18px;  position: relative; /* Để chữ nằm trên lớp phủ */
+    z-index: 2; /* Đặt nội dung trên lớp phủ */
+   
+  }
+  #hero button {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #000000;
+    background-color:transparent;
+    cursor: pointer;
+    border:1px solid #000000;
+    outline:none;
+    transition: 0.2s;
+    position: relative; /* Để chữ nằm trên lớp phủ */
+    z-index: 2; /* Đặt nội dung trên lớp phủ */
+  }
+  #hero button:hover {
+    transform: scale(1.1)
+  }
+  .logo img {
+    max-height: 50px;
+  }
+  /*sản phẩm nổi bật*/
+  #product1 {
+    text-align:center;
+  }
+  #product1 p {
+    color:#606063;
+  }
+  #product1 .pro-container {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap:wrap;
+  }
+  #product1 .pro{
+    width: 23%;
+    min-width:250px;
+    padding:10px 12px;
+    
+    border-radius: 25px;
+    cursor:pointer;
+    box-shadow:20px 20px 30px rgba(0,0,0,0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+  } 
+   #product1 .pro:hover {
+      box-shadow: 20px 20px 30px rgba(18, 17, 17, 0.06);
+      transform: scale(1.05);
+   }
+  #product1 .pro img {
+      width: 100%;
+      height: 400px; /* Chiều cao cố định cho ảnh */
+      object-fit: cover; 
+      border-radius: 20px;
+  }
+
+  #product1 .pro .des {
+    text-align: center;
+    padding: 10px 0;
+  }
+  #product1 .pro .des h4{
+    color:#606063;
+    font-size: 12px;
+    text-align: center;
+  }
+  #product1 .pro .des h5 {
+    padding-top: 7px;
+    color:#1a1a1a;
+    font-size: 14px;
+    text-align: center;
+  }
+  #product1 .pro .des i {
+    font-size: 12px;
+    color:rgba(243,181,25);
+    justify-content: center;
+  }
+#product1 .pro .des .cart {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #dcdcdc;
+  color: #2d3332;
+  border: 1px solid #707070;
+  position: absolute;
+  bottom: 23px;
+  right: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+#product1 .pro .des .cart i {
+  color: #000000; /* Đặt màu đen cho icon giỏ hàng */
+}
+#product1 .pro .des .cart:hover {
+  background-color: #7d7f7e; /* Màu nền thay đổi khi hover */
+  transform: scale(1.1); /* Tăng kích thước khi hover */
+}
+.view-more {
+  text-align:center;
+  color: #606063;
+  margin-top: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.view-more:hover {
+  transform: scale(1.05)
+}
+  /*banner small*/
+#banner {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  text-align:center;
+  background-image: url("https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/WEB-01-1-1536x732.jpg");
+  width:100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+  
+/* Small banner 2*/
+#sm-banner {
+  display:flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+}
+#sm-banner .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url('https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1229/https://lsoul.b-cdn.net/wp-content/uploads/2023/12/Cover-Web_sailormoon-1229x1536.jpg');
+  min-width: 520px;
+  height:450px;
+  background-size: cover;
+  background-position: center;
+  padding:30px;
+  border-radius: 25px;
+  box-shadow:20px 20px 30px rgba(0,0,0,0.02);
+  cursor:pointer;
+  transition: 0.2s ease;
+  position: relative;
+}
+#sm-banner .banner-box2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url('https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1229/https://lsoul.b-cdn.net/wp-content/uploads/2023/12/Cover-Web_4-ba-bp-1229x1536.jpg');
+  min-width: 520px;
+  height:450px;
+  background-size: cover;
+  background-position: center;
+  padding:30px;
+  border-radius: 25px;
+  box-shadow:20px 20px 30px rgba(0,0,0,0.02);
+  cursor:pointer;
+  transition: 0.2s ease;
+  position: relative;
+}
+#sm-banner h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+
+}
+#sm-banner h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+}
+#sm-banner span {
+  color: #fff;
+  font-size:14px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+#sm-banner .banner-box:hover button {
+  background: black;
+  color:white;
+  border: 1px solid #000;
+  transition: background 0.2s ease, transform 0.2s ease;
+  transform: scale(1,1);
+}
+#sm-banner .banner-box2:hover button {
+  background: black;
+  color:white;
+  border: 1px solid #000;
+  transition: background 0.2s ease, transform 0.2s ease;
+  transform: scale(1,1);
+}
+
+
+ @media (max-width: 768px) {
+  #banner3 {
+      grid-template-columns: 1fr; /* 1 cột trên thiết bị di động */
+  }
+}
+/* Feedback*/
+#feedback {
+  text-align:center;
+}
+#feedback p {
+  color:#606063;
+}
+#feedback .pro-container {
+  display:flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  flex-wrap:wrap;
+}
+#feedback1 .pro{
+  display:flex;
+  flex-direction: column;
+  width: 23%;
+  min-width:250px;
+  padding:10px 12px;
+  border: 1px solid #040404;
+  border-radius: 25px;
+  cursor:pointer;
+  box-shadow:20px 20px 30px rgba(0,0,0,0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+} 
+ 
+#feedback .pro img {
+    width: 250px;
+    height: 400px; /* Chiều cao cố định cho ảnh */
+    object-fit: cover; 
+    border-radius: 20px;
+}
+
+#feedback .pro .des {
+  text-align: center;
+  padding: 10px 0;
+}
+
+/*banner small*/
+#banner3 {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  text-align:center;
+  background-image: url("https://lsoul.b-cdn.net/wp-content/uploads/2024/10/PC_OFF_BANNER-2-1536x512.jpg");
+  width:100%;
+  height: 300px;
+  background-size:cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+ /* New Letter*/
+ #newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items:center;
+    background-color: #eaebea;
+ }
+#newsletter h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #030303;
+}
+#newsletter p {
+    font-size: 16px;
+    font-weight: 600px;
+    color: #787674
+    
+}
+#newsletter p span {
+  color:#466b52;
+  
+}
+#newsletter .form {
+  display: flex;
+  width: 30%;
+
+
+}
+#newsletter input {
+  height: 3.125rem;
+  padding: 0 1.25em;
+  font-size: 14px;
+  width:100%;
+  border:1px solid transparent;
+  border-radius: 4px;
+  outline:none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+}
+#newsletter button {
+  background-color: #030303;
+  color: #fff;
+  white-space: nowrap;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/*footer*/
+footer {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  max-width: 200px; 
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+}
+.footer-section p{
+  font-size: 16px;
+  color:#666;
+}
+.footer-section span {
+  color:#000;
+}
+.footer-section a {
+  color:#666;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color:#000;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+.footer-section ul li a:hover {
+  color: #000000;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #666;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.footer-bottom .language-switch a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #666;
+}
+.footer-bottom .language-switch a:hover {
+  color:#000;
+}
+.footer-bottom .language-switch a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.footer-bottom p {
+  margin-top: 5px;
+  color: #666;
+}
+
+.online {
+  color: green;
+  font-weight: bold;
+}
+
+.fa-envelope, .fa-phone {
+  margin-right: 5px;
+}
