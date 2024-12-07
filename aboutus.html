@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Về Chúng Tôi - LSOUL</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: white;
+            color: #333;
+        }
+        #header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #ffffff;
+    box-shadow:  0 5px 15px rgba(0,0,0,0.06);;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  #navbar {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  }
+  #navbar li {
+    list-style: none;
+    padding:0 20px;
+    position:relative;
+  }
+  #navbar li a {
+    text-decoration: none ;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition:  0.3s ease;
+  }
+  #navbar li a:hover,
+  #navbar li a.active {
+    color:#757070;
+  }
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content:"";
+    width: 30%;
+    background: #757070;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+  }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            color: #5F6F52;
+            font-weight: bold;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+        .highlight {
+            font-style: italic;
+            font-weight: bold;
+            color: #5F6F52;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+}
+.footer-section p{
+  font-size: 16px;
+  color:#666;
+}
+.footer-section span {
+  color:#000;
+}
+.footer-section a {
+  color:#666;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color:#000;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+
+.footer-section ul li a:hover {
+  color: #000000;
+}
+
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #666;
+  text-decoration: none;
+}
+
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-size: 14px;
+}
+.footer-bottom p {
+    text-align: center;
+}
+
+.footer-bottom .language-switch a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #666;
+}
+.footer-bottom .language-switch a:hover {
+  color:#000;
+}
+.footer-bottom .language-switch a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.footer-bottom p {
+  margin-top: 5px;
+  color: #666;
+}
+
+
+.online {
+  color: green;
+  font-weight: bold;
+}
+
+
+.fa-envelope, .fa-phone {
+  margin-right: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <section id="header">
+        <div class="header-container">
+              <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
+                <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
+              </a>
+        </div>      
+         <div>
+            <ul id="navbar" class="navbar">
+            <li><a class="active" href="Trang chủ.html">Home</a></li>
+            <li><a href="Cửa hàng.html">Cửa hàng</a></li>
+            <li><a href="Về chúng tôi.html">Về chúng tôi</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Liên hệ.html">Liên hệ</a></li>
+            <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
+            <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
+            <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+           
+          </ul>
+        </div>
+      </section>
+        
+    <div class="container">
+        <p><span class="highlight">“Không chỉ là một thương hiệu, mà còn là hiện thân cho niềm tin mãnh liệt của tôi vào sức mạnh biến đổi của thời trang.”</span></p>
+        <p><strong>LSOUL</strong>, thương hiệu quần áo thiết kế đã ghi dấu ấn trong làng thời trang chuyên nghiệp bằng mẫu mã và chất lượng. LSOUL là nơi mà các ý tưởng độc đáo được ra đời, là ngôi nhà chung quy tụ những con người có tình yêu và niềm đam mê mãnh liệt với thời trang. Với mong muốn tạo ra những bộ trang phục thời thượng dành cho những cô gái có tinh thần phóng khoáng, cá tính và đặc biệt yêu thích từng đường cong trên cơ thể. <span class="highlight">“Nữ tính nhưng vẫn cá tính”</span> mô tả các thiết kế của LSOUL và cũng là kim chỉ nam trên hành trình phát triển của thương hiệu.</p>
+        <h2 class="section-title">Khởi đầu</h2>
+        <p>Năm 2016, sau khi thành công vang dội với thương hiệu thời trang nam L’JIN, founder là ông Nguyễn Trọng Lâm đã chính thức thành lập thương hiệu mới mang tên LSOUL vào năm 2017, cũng là lần đầu LSOUL xuất hiện tại thị trường Việt Nam với mô hình kinh doanh sản phẩm nhập khẩu. Các sản phẩm được lựa chọn và nhập trực tiếp bởi chính founder của thương hiệu, dựa trên tiêu chí đáp ứng về phong cách khác biệt – chất lượng đảm bảo – xu hướng đón đầu, phục vụ nhu cầu mua sắm của khách hàng nữ tại thị trường thời trang Việt Nam lúc bấy giờ. Cửa hàng ban đầu còn khá thô sơ và quy mô nhỏ, toàn bộ đều được lên ý tưởng và decor thủ công bởi chính founder.</p>
+        <h2 class="section-title">Chuyển mình ngoạn mục</h2>
+        <p>Năm 2022 đánh dấu bước ngoặt lịch sử khi LSOUL chính thức chuyển mình trở thành thương hiệu thiết kế chuyên nghiệp. Với sự sáng tạo độc đáo và cách tiếp cận đổi mới, LSOUL đã nhanh chóng thu hút sự chú ý của giới mộ điệu thời trang quốc tế. Lấy cảm hứng từ những quan sát tinh tế về xu hướng thời trang, LSOUL không chỉ dự đoán mà còn dẫn đầu trong việc tạo dựng xu hướng và phong cách thời trang mới.</p>
+        <div class="image-container">
+            <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1639/https://lsoul.b-cdn.net/wp-content/uploads/2024/07/web-2-1639x2048.jpg " alt="Hình ảnh về bước chuyển mình ngoạn mục của LSOUL">
+            <p><em>Bước chuyển mình ngoạn mục - LSOUL vươn ra thị trường quốc tế</em></p>
+        </div>
+        </div>
+        <footer>
+            <div class="footer-container">
+              <div class="footer-section">
+                <h4>CHÚNG TÔI CÓ THỂ GIÚP GÌ</h4>
+                <p><a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a></p>
+                <p><i class="fa-solid fa-phone"></i> +84777071707 <span class="online">Online</span></p>
+                <p>Opening hours 8:30 AM - 10 PM</p>
+              </div>
+              <div class="footer-section">
+                <h4>VỀ LSOUL</h4>
+                <ul>
+                  <li><a href="#">Về Chúng Tôi</a></li>
+                  <li><a href="#">Feedback</a></li>
+                  <li><a href="#">Cửa Hàng</a></li>
+                  <li><a href="#">Work With Us</a></li>
+                </ul>
+              </div>
+              <div class="footer-section">
+                <h4>CHÍNH SÁCH LSOUL</h4>
+                <ul>
+                  <li><a href="#">Chính Sách Đổi Trả</a></li>
+                  <li><a href="#">Chính Sách Bảo Mật</a></li>
+                  <li><a href="#">Hướng Dẫn Thanh Toán</a></li>
+                </ul>
+              </div>
+              <div class="footer-section">
+                <h4>DANH MỤC</h4>
+                <ul>
+                  <li><a href="#">Set</a></li>
+                  <li><a href="#">Đầm</a></li>
+                  <li><a href="#">Áo</a></li>
+                  <li><a href="#">Quần</a></li>
+                  <li><a href="#">Chân Váy</a></li>
+                </ul>
+              </div>
+              <div class="footer-section">
+                <h4>THEO DÕI CHÚNG TÔI</h4>
+                <div class="social-icons">
+                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="#"><i class="fa-solid fa-shop"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <div class="language-switch">
+                🌐 <a href="#">THAI</a> | <a href="#">ENGLISH</a> | <a href="#" class="active">TIẾNG VIỆT</a>
+              </div>
+              <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
+            </div>
+          </footer>
+        
+        
+</body>
+</html>

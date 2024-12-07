@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L SOUL </title>
+    <style>
+        /* Tổng thể */
+        body {
+            font-family:  'Playfair Display', serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: #333;
+            min-height: 1500px; /* Đặt chiều cao tối thiểu cho body */
+            display: flex;
+            flex-direction: column;
+        }
+
+        #header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #ffffff;
+    box-shadow:  0 5px 15px rgba(0,0,0,0.06);;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+    #navbar {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  }
+    #navbar li {
+    list-style: none;
+    padding:0 20px;
+    position:relative;
+  }
+  #navbar li a {
+    text-decoration: none ;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition:  0.3s ease;
+  }
+  #navbar li a:hover,
+  #navbar li a.active {
+    color:#757070;
+  }
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content:"";
+    width: 30%;
+    background: #757070;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+  }
+
+        main {
+            display: flex;
+            margin: 20px;
+            flex-grow: 1; /* Để phần main chiếm phần còn lại của trang */
+        }
+        a {
+            text-decoration: none;
+        }
+        /* Sidebar - Bộ lọc */
+        .sidebar {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #809671;
+        }
+
+        .sidebar label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .sidebar select, .sidebar input[type="range"], .sidebar input[type="checkbox"], .sidebar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Thanh tìm kiếm nhỏ gọn */
+        .sidebar input[type="text"] {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+        }
+
+        /* Danh sách sản phẩm */
+        .product-list {
+            flex: 3;
+        }
+
+        .product-list h2 {
+            margin-bottom: 15px;
+            color: #809671;
+            font-size: 1.5rem;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: black;
+           
+        }
+      
+
+        .product p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .product .price {
+            color: #809671;
+            font-weight: bold;
+        }
+
+        /* Hover hiệu ứng */
+        .product:hover {
+            transform: scale(1.05);
+            border-color: #b3b792;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sản phẩm đã xem gần đây */
+        .recent-viewed {
+            margin-top: 40px;
+        }
+
+        .recent-viewed h2 {
+            font-size: 1.5rem;
+            color: #809671;
+            margin-bottom: 15px;
+        }
+
+        footer {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+}
+.footer-section p{
+  font-size: 16px;
+  color:#666;
+}
+.footer-section span {
+  color:#000;
+}
+.footer-section a {
+  color:#666;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color:#000;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+
+.footer-section ul li a:hover {
+  color: #000000;
+}
+
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #666;
+  text-decoration: none;
+}
+
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+
+.footer-bottom .language-switch a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #666;
+}
+.footer-bottom .language-switch a:hover {
+  color:#000;
+}
+.footer-bottom .language-switch a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.footer-bottom p {
+  margin-top: 5px;
+  color: #666;
+}
+
+
+.online {
+  color: green;
+  font-weight: bold;
+}
+
+
+.fa-envelope, .fa-phone {
+  margin-right: 5px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <section id="header">
+        <div class="header-container">
+              <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
+                <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
+              </a>
+        </div>      
+         <div>
+            <ul id="navbar" class="navbar">
+            <li><a class="active" href="Trang chủ.html">Home</a></li>
+            <li><a href="Cửa hàng.html">Cửa hàng</a></li>
+            <li><a href="Về chúng tôi.html">Về chúng tôi</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Liên hệ.html">Liên hệ</a></li>
+            <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
+            <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
+            <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+           
+          </ul>
+        </div>
+      </section>
+    
+
+    <main>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Bộ lọc sản phẩm</h2>
+            
+            <!-- Thanh tìm kiếm nhỏ gọn -->
+            <label for="search">Tìm kiếm:</label>
+            <input type="text" id="search" placeholder="Tìm kiếm sản phẩm...">
+
+            <label for="category">Danh mục:</label>
+            <select id="category">
+                <option value="">Tất cả</option>
+                <option value="ao">Áo</option>
+                <option value="quan">Quần</option>
+                <option value="vay">Váy</option>
+                <option value="set">Set</option>
+                <option value="phukien">Phụ kiện</option>
+            </select>
+
+            <label for="price">Lọc theo giá:</label>
+            <input type="range" id="price" min="100000" max="2000000" value="500000" step="100000">
+            <span id="price-range">200,000 VND - 400,000 VND</span>
+        </aside>
+
+        <!-- Product List -->
+        <section class="product-list">
+            <h2>Danh sách sản phẩm</h2>
+            <div class="products" id="product-list">
+                <!-- Sản phẩm sẽ được hiển thị tại đây -->
+            </div>
+
+            <!-- Sản phẩm đã xem gần đây -->
+            <section class="recent-viewed">
+                <h2>Sản phẩm đã xem gần đây</h2>
+                <div class="products" id="recent-viewed-list">
+                    <!-- Các sản phẩm đã xem sẽ được hiển thị tại đây -->
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h4>CHÚNG TÔI CÓ THỂ GIÚP GÌ</h4>
+            <p><a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a></p>
+            <p><i class="fa-solid fa-phone"></i> +84777071707 <span class="online">Online</span></p>
+            <p>Opening hours 8:30 AM - 10 PM</p>
+          </div>
+          <div class="footer-section">
+            <h4>VỀ LSOUL</h4>
+            <ul>
+              <li><a href="#">Về Chúng Tôi</a></li>
+              <li><a href="#">Feedback</a></li>
+              <li><a href="#">Cửa Hàng</a></li>
+              <li><a href="#">Work With Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>CHÍNH SÁCH LSOUL</h4>
+            <ul>
+              <li><a href="#">Chính Sách Đổi Trả</a></li>
+              <li><a href="#">Chính Sách Bảo Mật</a></li>
+              <li><a href="#">Hướng Dẫn Thanh Toán</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>DANH MỤC</h4>
+            <ul>
+              <li><a href="#">Set</a></li>
+              <li><a href="#">Đầm</a></li>
+              <li><a href="#">Áo</a></li>
+              <li><a href="#">Quần</a></li>
+              <li><a href="#">Chân Váy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>THEO DÕI CHÚNG TÔI</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-solid fa-shop"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="language-switch">
+            🌐 <a href="#">THAI</a> | <a href="#">ENGLISH</a> | <a href="#" class="active">TIẾNG VIỆT</a>
+          </div>
+          <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
+        </div>
+      </footer>
+    
+
+    <script>
+        const products = [
+            { id: 1, name: "DYNA TOP", category: "ao", price: 750000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/09/DYNA-TOP-RAINY-SKIRT-15.jpg" },
+            { id: 2, name: "KAREN DRESS", category: "set", price: 1790000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/09/KAREN-DRESS-5.jpg" },
+            { id: 3, name: "LISA SHORTS", category: "quan", price: 970000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/06/LISA-11.jpg" },
+            { id: 4, name: "LACE LEGGINGS", category: "phukien", price: 200000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/04/CLOUDY-2.jpg " },
+            { id: 5, name: "POLINA SET", category: "set", price: 1600000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/11/POLINA-SET-4-1.jpg " },
+            { id: 6, name: "LONIE SKIRT", category: "vay", price: 890000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/09/LONIE-SKIRT-1.jpg" },
+            { id: 7, name: "KELLY SKIRT", category: "vay", price: 690000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/KELLY-SKIRT-1-1.jpg" },
+            { id: 8, name: "NEGA PANTS", category: "quan", price: 1900000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/08/NEGA-SET-7.jpg" },
+            { id: 9, name: "DOX SHORTS", category: "quan", price: 1390000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/11/DOX-SET-3.jpg" },
+            { id: 10, name: "LEVEL DRESS", category: "vay", price: 1600000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/LEVEL-DRESS-1.jpg" },
+            { id: 11, name: "FARNY TOP", category: "ao", price: 1500000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/09/FARNY-TOP-5.jpg" },
+            { id: 12, name: "ROCKY TOP", category: "ao", price: 980000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/ROCKY-TOP-4.jpg" },
+            { id: 13, name: "LEAVEY DRESS", category: "set", price: 1800000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/09/LEAVEY-DRESS-11.jpg" },  
+            { id: 14, name: "JEANA TOP", category: "set", price: 850000, inStock: true, image: "https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/09/JEANA-TOP-6.jpg" }
+        ];
+
+        
+        let recentViewed = [];
+
+        // Hàm render sản phẩm
+        function renderProducts(filteredProducts) {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = '';
+    filteredProducts.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        
+        // Tạo link tới trang chi tiết sản phẩm
+        const productLink = document.createElement('a');
+        productLink.href = `product.html?id=${product.id}`; // Dẫn tới trang chi tiết sản phẩm
+        productLink.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p class="price">${product.price.toLocaleString()} VND</p>
+        `;
+        
+        productElement.appendChild(productLink);
+        productList.appendChild(productElement);
+    });
+}
+
+        // Thêm sản phẩm vào danh sách đã xem gần đây
+        function addToRecentView(product) {
+            if (!recentViewed.some(item => item.id === product.id)) {
+                recentViewed.unshift(product); // Thêm vào đầu mảng
+                if (recentViewed.length > 4) {
+                    recentViewed.pop(); // Giới hạn chỉ 4 sản phẩm
+                }
+            }
+            renderRecentViewed();
+        }
+
+        // Hiển thị sản phẩm đã xem gần đây
+        function renderRecentViewed() {
+            const recentViewedList = document.getElementById('recent-viewed-list');
+            recentViewedList.innerHTML = '';
+            recentViewed.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.classList.add('product');
+                productElement.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p class="price">${product.price.toLocaleString()} VND</p>
+                `;
+                recentViewedList.appendChild(productElement);
+            });
+        }
+
+        // Hàm lọc sản phẩm
+        function filterProducts() {
+            const searchValue = document.getElementById('search').value.toLowerCase();
+            const categoryValue = document.getElementById('category').value;
+            const priceValue = parseInt(document.getElementById('price').value);
+
+            const filteredProducts = products.filter(product => {
+                const matchesSearch = product.name.toLowerCase().includes(searchValue);
+                const matchesCategory = categoryValue ? product.category === categoryValue : true;
+                const matchesPrice = product.price <= priceValue;
+                return matchesSearch && matchesCategory && matchesPrice;
+            });
+
+            renderProducts(filteredProducts);
+        }
+
+        // Gọi renderProducts để hiển thị tất cả sản phẩm ban đầu
+        renderProducts(products);
+
+        // Cập nhật bộ lọc khi thay đổi giá trị
+        document.getElementById('search').addEventListener('input', filterProducts);
+        document.getElementById('category').addEventListener('change', filterProducts);
+        document.getElementById('price').addEventListener('input', (event) => {
+            document.getElementById('price-range').textContent = `${(event.target.value - 100000).toLocaleString()} VND - ${(event.target.value).toLocaleString()} VND`;
+            filterProducts();
+        });
+    </script>
+</body>
+</html>

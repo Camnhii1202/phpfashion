@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <title>Chính sách LSOUL</title>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #fdfdfd;
+            color: #333;
+        }
+        #header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #ffffff;
+    box-shadow:  0 5px 15px rgba(0,0,0,0.06);;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  #navbar {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  }
+  #navbar li {
+    list-style: none;
+    padding:0 20px;
+    position:relative;
+  }
+  #navbar li a {
+    text-decoration: none ;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition:  0.3s ease;
+  }
+  #navbar li a:hover,
+  #navbar li a.active {
+    color:#757070;
+  }
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content:"";
+    width: 30%;
+    background: #757070;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+  }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            min-height: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Playfair Display', serif;
+        }
+        .menu {
+            width: 20%;
+            padding-right: 20px;
+            border-right: 1px solid #ccc;
+        }
+        .menu button {
+            width: 100%;
+            background: white;
+            color: black;
+            border: 1px solid #ccc;            
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .menu button:hover, .menu button.active {
+            background: black;
+            color: white
+        }
+        .content {
+            width: 70%;
+            padding-left: 20px;
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .content h2 {
+            color: black;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        footer {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+}
+.footer-section p{
+  font-size: 16px;
+  color:#666;
+}
+.footer-section span {
+  color:#000;
+}
+.footer-section a {
+  color:#666;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color:#000;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+
+.footer-section ul li a:hover {
+  color: #000000;
+}
+
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #666;
+  text-decoration: none;
+}
+
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+
+.footer-bottom .language-switch a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #666;
+}
+.footer-bottom .language-switch a:hover {
+  color:#000;
+}
+.footer-bottom .language-switch a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.footer-bottom p {
+  margin-top: 5px;
+  color: #666;
+}
+
+
+.online {
+  color: green;
+  font-weight: bold;
+}
+
+
+.fa-envelope, .fa-phone {
+  margin-right: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <section id="header">
+        <div class="header-container">
+              <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
+                <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
+              </a>
+        </div>      
+         <div>
+            <ul id="navbar" class="navbar">
+            <li><a class="active" href="Trang chủ.html">Home</a></li>
+            <li><a href="Cửa hàng.html">Cửa hàng</a></li>
+            <li><a href="Về chúng tôi.html">Về chúng tôi</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Liên hệ.html">Liên hệ</a></li>
+            <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
+            <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
+            <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+           
+          </ul>
+        </div>
+      </section>    
+    <img src="https://bazaarvietnam.vn/wp-content/uploads/2024/07/Harpers-Bazaar-BABYMONSTER-mac-trang-phuc-LSEOUL-trong-MV-Forever_02.jpg" alt="L SOUL" style="width: 100%; height: 15%; margin-bottom: 5px;">
+
+    <div class="container">
+        <div class="menu">
+            <button onclick="showContent('return')">Chính sách đổi trả - Bảo hành</button>
+            <button onclick="showContent('shipping')">Chính sách giao hàng</button>
+            <button onclick="showContent('privacy')">Chính sách bảo mật</button>
+            <button onclick="showContent('payment')">Hướng dẫn thanh toán</button>
+            <button onclick="showContent('purchase')">Hướng dẫn mua hàng</button>
+        </div>
+        <div id="return" class="content">
+            <h2>Chính sách đổi trả - Bảo hành</h2>
+            <p><strong>1. Làm thế nào để đổi hàng?</strong></p>
+            <p>LSOUL hy vọng được mang đến cho bạn trải nghiệm và dịch vụ chăm sóc khách hàng tốt nhất. Để đảm bảo điều này, LSOUL rất mong nhận được sự hợp tác của bạn bằng cách nhận được đầy đủ video khui mở kiện hàng, cùng với biên nhận mua hàng từ bạn.</p>
+            <p>Vui lòng gửi thông tin về việc đổi hàng tới LSOUL trong vòng 48 giờ tính từ thời điểm giao hàng thành công. Sau khoảng thời gian này, nếu không nhận được thông tin phản hồi, LSOUL mặc định bạn hài lòng với sản phẩm được giao.</p>
+        
+            <p><strong>2. Sản phẩm nào đủ điều kiện để đổi hàng?</strong></p>
+            <p>Sản phẩm đủ điều kiện đổi hàng vẫn giữ nguyên trạng thái ban đầu bao gồm tem mác thương hiệu và phụ kiện đi kèm (nếu có). Sản phẩm không bị chỉnh sửa, không bị bẩn hoặc bị tác động bởi hóa chất, không được giặt ủi, không có mùi lạ và không có dấu hiệu đã qua sử dụng.</p>
+        
+            <p><strong>3. Sản phẩm nào không đủ điều kiện đổi hàng?</strong></p>
+            <p>Sản phẩm không giữ nguyên trạng thái ban đầu (như trên).</p>
+            <p>Sản phẩm thuộc các chương trình khuyến mãi, giảm giá sẽ không được LSOUL chấp nhận đổi hàng (trừ trường hợp lỗi sản xuất).</p>
+        
+            <p><strong>4. Tôi nên làm gì nếu nhận được sản phẩm bị lỗi/không chính xác?</strong></p>
+            <p>Xin vui lòng liên hệ số hotline của LSOUL để được hỗ trợ nếu bạn nhận được sản phẩm bị lỗi/không chính xác. LSOUL đổi hàng miễn phí trong trường hợp lỗi đến từ phía LSOUL (lỗi sản xuất hoặc giao hàng không đúng mẫu mã, số lượng, kích thước, màu sắc).</p>
+        
+            <p><strong>5. Tôi nên làm gì nếu muốn đổi sang sản phẩm khác với đơn đặt hàng ban đầu?</strong></p>
+            <p>Đối với những phát sinh từ nhu cầu cá nhân, bạn sẽ chịu chi phí vận chuyển hai chiều. Sản phẩm đổi sẽ bằng hoặc cao hơn giá trị thanh toán của sản phẩm đã mua, phần chênh lệch sau khi đổi sang sản phẩm có giá trị thấp hơn sẽ không được hoàn lại. Trong trường hợp đổi hàng, phí vận chuyển ban đầu sẽ không được hoàn lại.</p>
+        
+            <p><strong>6. Tôi nên làm gì đối với các sản phẩm mua tại các sàn thương mại điện tử?</strong></p>
+            <p>Với các sản phẩm được đặt hàng trên các sàn thương mại điện tử (Shopee, Lazada, Tiktok) LSOUL sẽ tuân thủ chính sách đổi hàng của sàn.</p>
+        
+            <p><strong>7. Tôi có thể đổi hàng bằng phương thức nào?</strong></p>
+            <p>Bạn có thể đến trực tiếp cửa hàng của LSOUL để đổi sản phẩm hoặc sử dụng dịch vụ chuyển phát nhanh. Vui lòng lưu ý khi gửi kiện hàng thông qua dịch vụ chuyển phát nhanh:</p>
+            <ul style="margin-left: 20px;">
+                <li>LSOUL không chịu trách nhiệm về tính nguyên vẹn và đầy đủ của hàng hóa bên trong kiện hàng khi được gửi qua dịch vụ chuyển phát nhanh.</li>
+                <li>Bạn cần đóng gói cẩn thận để đảm bảo hàng hóa không bị hư hỏng hoặc mất mát, thất lạc.</li>
+                <li>Sản phẩm được đóng gói nên được chụp lại trước khi chuyển phát về cho LSOUL. Việc lưu trữ hình ảnh sẽ góp phần giải quyết tốt hơn các vấn đề phát sinh trong quá trình đổi hàng qua dịch vụ chuyển phát.</li>
+            </ul>
+        
+            <p><strong>8. Thời hạn đổi hàng trong bao lâu?</strong></p>
+            <p>Chính sách đổi hàng của LSOUL chỉ áp dụng cho những đơn hàng được hoàn về trong vòng 07 ngày kể từ khi bạn nhận được hàng. Quá thời hạn này, LSOUL có quyền từ chối yêu cầu đổi hàng. Mỗi sản phẩm chỉ được đổi một lần.</p>
+        
+            <p><strong>9. LSOUL có Chính Sách Hoàn Tiền/Huỷ Đơn không?</strong></p>
+            <p>Chính Sách Hoàn Tiền/Huỷ Đơn của LSOUL được thiết lập dựa trên các tình huống cụ thể. Chúng tôi chỉ thực hiện việc hoàn tiền hoặc huỷ đơn hàng trong trường hợp lỗi xuất phát từ phía LSOUL. Nếu có bất kỳ sai sót nào xảy ra trong quá trình sản xuất, chúng tôi sẽ hoàn toàn chịu trách nhiệm. LSOUL không chấp nhận các trường hợp Hoàn tiền/Hủy đơn dựa trên mong muốn cá nhân hoặc sở thích riêng của khách hàng. Thay vào đó, LSOUL chỉ cung cấp dịch vụ đổi hàng. Sản phẩm được đổi sẽ bằng hoặc cao hơn giá trị thanh toán của sản phẩm ban đầu. Xin lưu ý, phần chênh lệch sau khi đổi sang sản phẩm có giá trị thấp hơn sẽ không được hoàn lại.</p>
+        
+            <p><strong>10. Thông tin liên hệ để được hỗ trợ?</strong></p>
+            <p>Mọi thắc mắc của bạn sẽ được hỗ trợ giải đáp qua số hotline: <a href="tel:0777071707" style="color: #b3b792; text-decoration: none;">0777071707</a>.</p>
+        </div>
+        
+        <div id="shipping" class="content">
+            <h2>Chính sách giao hàng</h2>
+            <p>LSOUL giao hàng toàn quốc với thời gian dự kiến <strong>từ 2-5 ngày</strong> làm việc.</p>
+            <p>Với các đơn hàng quốc tế, dự kiến sẽ giao từ <strong>từ 10-15 ngày</strong>.</p>
+            <p>Tại nội thành TP Hồ Chí Minh, phí giao hàng sẽ được miễn phí.</p>
+        </div>
+        <div id="privacy" class="content">
+            <h2>Chính sách đổi trả - Bảo hành</h2>
+            <p>Bảo vệ thông tin và dữ liệu khách hàng luôn là một vấn đề quan trọng với chúng tôi, do đó chúng tôi chỉ sử dụng tên và một số thông tin có liên quan đến giao dịch giữa chúng tôi và quý khách trong một số trường hợp nhất định được đề ra trong chính sách bảo mật này.</p>
+            <p>Quý khách có thể ghé thăm trang web lsoul.com mà không cần cung cấp thông tin cá nhân nào trừ trường hợp quý khách đăng ký tài khoản để đăng nhập bằng tên và mật khẩu của mình.</p>
+            <p>Nếu quý khách không hiểu rõ hoặc có ý kiến đóng góp về chính sách bảo mật này, xin vui lòng gửi email đến <a href="mailto:info@lsoul.com" style="color: #b3b792; text-decoration: none;">info@lsoul.com</a>. Chúng tôi luôn sẵn sàng lắng nghe và tiếp nhận ý kiến của quý khách.</p>
+        
+            <p><strong>1. Mục đích:</strong></p>
+            <p>Chúng tôi chỉ sử dụng thông tin cá nhân khách hàng trong nội bộ <strong>Hộ Kinh Doanh LSOUL</strong>, đơn vị chủ quản của lsoul.com. Chúng tôi không bán hoặc chia sẻ thông tin cá nhân khách hàng cho bên thứ ba.</p>
+            <p><strong>Khi quý khách đăng ký tài khoản, thông tin thu thập bao gồm:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Họ tên</li>
+                <li>Di động</li>
+                <li>Địa chỉ</li>
+                <li>Email</li>
+            </ul>        
+            <p><strong>2. Phạm vi sử dụng thông tin:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Xử lý đơn đặt hàng, cung cấp dịch vụ và thông tin qua trang web.</li>
+                <li>Giao hàng và thông báo về tình trạng giao hàng.</li>
+                <li>Cung cấp thông tin về sản phẩm và dịch vụ.</li>
+                <li>Hỗ trợ quản lý tài khoản và xác nhận giao dịch tài chính.</li>
+            </ul>
+            <p><strong>Chúng tôi chia sẻ thông tin với dịch vụ chuyển phát nhanh để giao hàng.</strong></p>
+            <p><strong>Chúng tôi cũng sử dụng thông tin để gửi các thông tin báo giá/khuyến mãi.</strong></p>
+        
+            <p><strong>3. Bảo mật thông tin thanh toán:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><strong>Khách hàng đã đăng nhập:</strong> Chi tiết đơn hàng được lưu trữ trong tài khoản và có thể kiểm tra bất kỳ lúc nào.</li>
+                <li><strong>Khách hàng chưa đăng nhập:</strong> Vui lòng liên hệ qua hotline hoặc email để chúng tôi xác nhận thông tin đơn hàng.</li>
+            </ul>
+        
+            <p><strong>4. Thời gian lưu trữ dữ liệu:</strong></p>
+            <p><strong>Bình luận và siêu dữ liệu sẽ được lưu trữ vô thời hạn để tự động nhận diện và chấp nhận bình luận.</strong></p>
+            <p>Thông tin của người dùng đăng ký có thể chỉnh sửa hoặc xóa bất kỳ lúc nào.</p>
+        
+            <p><strong>5. Quản lý thông tin cá nhân:</strong></p>
+            <p><strong>Người dùng có thể thay đổi thông tin như tên người dùng, số điện thoại, địa chỉ, ngày sinh và mật khẩu</strong> thông qua tài khoản của mình. Nếu cần đặt lại mật khẩu, quý khách sẽ nhận được email với liên kết yêu cầu thay đổi mật khẩu.</p>
+        
+            <p><strong>6. Địa chỉ của đơn vị thu thập:</strong></p>
+            <p><strong>Hộ Kinh Doanh LSOUL – 257B Nguyễn Trãi, P. Nguyễn Cư Trinh, Q.1, TP. Hồ Chí Minh.</strong> Chúng tôi không giao quyền thu thập thông tin cho bên thứ ba trừ khi có yêu cầu pháp luật.</p>
+            <p><strong>Vui lòng liên hệ qua số hotline: 028 6276 7778 hoặc email: info@lsoul.com nếu quý khách phát hiện vấn đề liên quan đến thông tin cá nhân.</strong></p>
+        
+            <p style="text-align: center; margin-top: 20px;">Mọi thay đổi về chính sách bảo mật sẽ được thông báo rõ ràng trên website và fanpage chính thức.</p>
+        </div>
+        <div id="payment" class="content">
+            <h2>Hướng dẫn thanh toán</h2>
+            <p><strong>Phương thức thanh toán</strong></p>
+            <p>Trong quá trình đặt hàng tại <strong>lsoul.com</strong>, quý khách có thể chọn phương thức thanh toán bằng chuyển khoản để hoàn tất đơn hàng. Sau khi chọn xong sản phẩm, tại bước thanh toán, quý khách vui lòng chọn hình thức “<strong>Chuyển khoản</strong>” và sử dụng thông tin sau:</p>
+        <ul style="margin-left: 20px;">
+            <li><strong>Số tài khoản:</strong> 1017354122</li>
+            <li><strong>Tên tài khoản:</strong> LE THI PHUONG THAO</li>
+            <li><strong>Tên ngân hàng:</strong> Ngân hàng Vietcombank </li>
+            <li><strong>Chi nhánh:</strong> Lý Thái Tổ</li>
+            <li><strong>Swift Code:</strong> ASCBVNVX</li>
+        </ul>
+            <p><strong>Phương thức thanh toán bằng QR:</strong></p>
+            <p>Quý khách có thể thanh toán nhanh chóng qua các phương thức QR sau:</p>
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <div style="text-align: center; margin-right: 10px;">
+                    <img src="vcb.jpg" alt="QR Vietcombank" style="max-width: 150px; height: auto;"/>
+                    <p><strong>QR Vietcombank</strong></p>
+                </div>
+                <div style="text-align: center; margin-right: 15px;">
+                    <img src="momo.jpg" alt="QR MoMo" style="max-width: 165px; height: auto;"/>
+                    <p><strong>QR MoMo</strong></p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="vnpay.jpg" alt="QR VNPay" style="max-width: 160px; height: auto;"/>
+                    <p><strong>QR VNPay</strong></p>
+                </div>
+            </div>
+            
+    </div>
+      
+        <div id="purchase" class="content">
+            <h2>Hướng dẫn mua hàng</h2>
+            <p><strong>Làm thế nào để tôi đặt hàng trên website?</strong></p>
+
+            <p><strong>Tìm sản phẩm cần mua:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Từ thanh Menu chính -> Chọn cửa hàng -> Chọn nhóm (Váy, đầm, set,...) -> Chọn sản phẩm</li>
+                <li>Tìm nhanh khi đã biết “tên sản phẩm”. Bạn chỉ cần gõ vào khung tìm kiếm, trang sẽ gợi ý bạn các sản phẩm đúng nhất hiện có tại trang.</li>
+            </ul>
+        
+            <p><strong>Tùy chỉnh đơn hàng & Đặt hàng:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Xem thông tin chi tiết sản phẩm, đúng sản phẩm Quý khách cần -> Chọn màu sắc -> Chọn size -> Chọn số lượng -> Click Thêm vào giỏ hàng. Lúc này, góc phải trên cùng hiện ra danh sách thu gọn các sản phẩm được chọn.</li>
+                <li>Click “Tiến hành thanh toán”, Quý khách có thể tùy chọn: thêm bớt số lượng sản phẩm mua, xóa sản phẩm đã chọn hoặc tiếp tục mua thêm sản phẩm khác.</li>
+                <li>Sau khi có được danh sách các sản phẩm cần mua, Quý khách tiếp tục các bước -> Điền thông tin nhận hàng -> Chọn hình thức thanh toán.</li>
+            </ul>
+        
+            <p><strong>Xác nhận đơn hàng & Nhận hàng:</strong></p>
+            <p>Ngay khi Quý khách đặt hàng thành công, LSOUL sẽ gửi email xác nhận đơn hàng vào địa chỉ email Quý khách cung cấp, đồng thời bộ phận giao nhận của LSOUL sẽ gọi để xác nhận giao hàng.</p>
+        
+            <p><strong>Để đảm bảo Quý khách nhận được hàng nhanh nhất có thể, Quý khách vui lòng lưu ý:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Các đơn đặt hàng được LSOUL chấp nhận khi có đủ thông tin chính xác về địa chỉ & số điện thoại người mua hàng. Trong trường hợp không thể liên lạc được Quý khách tại thời điểm gọi, LSOUL sẽ gửi SMS thông báo và bảo lưu đơn hàng cho Quý khách trong thời gian 02 ngày làm việc, quá thời gian trên hệ thống sẽ tự động hủy.</li>
+                <li>Một số trường hợp nhạy cảm: giá trị đơn hàng quá lớn & thời gian giao hàng vào buổi tối, địa chỉ giao hàng trong ngõ hoặc có thể dẫn đến nguy hiểm. LSOUL sẽ chủ động liên lạc với quý khách để thống nhất lại thời gian giao hàng cụ thể.</li>
+                <li>Trong trường hợp giao hàng chậm trễ mà không báo trước, nhầm hàng… Quý khách có thể không nhận hàng và chúng tôi sẽ hoàn trả toàn bộ số tiền mà Quý khách trả trước (nếu có) trong vòng 02 ngày hành chính.</li>
+                <li>Quá trình vận chuyển hàng hóa đến tay khách hàng (nhất là khách hàng ở xa) đôi khi sẽ có phát sinh rủi ro ngoài ý muốn (va đập, ẩm ướt, tai nạn…) gây ảnh hưởng đến hàng hóa, vì thế xin Quý Khách vui lòng kiểm tra hàng hóa thật kỹ trước khi ký nhận. LSOUL sẽ không chịu trách nhiệm với những sai lệch hình thức của hàng hoá sau khi Quý khách đã ký nhận hàng.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h4>CHÚNG TÔI CÓ THỂ GIÚP GÌ</h4>
+            <p><a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a></p>
+            <p><i class="fa-solid fa-phone"></i> +84777071707 <span class="online">Online</span></p>
+            <p>Opening hours 8:30 AM - 10 PM</p>
+          </div>
+          <div class="footer-section">
+            <h4>VỀ LSOUL</h4>
+            <ul>
+              <li><a href="#">Về Chúng Tôi</a></li>
+              <li><a href="#">Feedback</a></li>
+              <li><a href="#">Cửa Hàng</a></li>
+              <li><a href="#">Work With Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>CHÍNH SÁCH LSOUL</h4>
+            <ul>
+              <li><a href="#">Chính Sách Đổi Trả</a></li>
+              <li><a href="#">Chính Sách Bảo Mật</a></li>
+              <li><a href="#">Hướng Dẫn Thanh Toán</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>DANH MỤC</h4>
+            <ul>
+              <li><a href="#">Set</a></li>
+              <li><a href="#">Đầm</a></li>
+              <li><a href="#">Áo</a></li>
+              <li><a href="#">Quần</a></li>
+              <li><a href="#">Chân Váy</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>THEO DÕI CHÚNG TÔI</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#"><i class="fa-solid fa-shop"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="language-switch">
+            🌐 <a href="#">THAI</a> | <a href="#">ENGLISH</a> | <a href="#" class="active">TIẾNG VIỆT</a>
+          </div>
+          <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
+        </div>
+      </footer>    
+
+    <script>
+        function showContent(id) {
+            const contents = document.querySelectorAll('.content');
+            const buttons = document.querySelectorAll('.menu button');
+
+            contents.forEach(content => content.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(id).classList.add('active');
+            const activeButton = Array.from(buttons).find(button => button.textContent.includes(document.getElementById(id).querySelector('h2').textContent));
+            if (activeButton) activeButton.classList.add('active');
+        }
+    </script>
+</body>
+</html>
