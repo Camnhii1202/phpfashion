@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
+body {
+    font-family: Arial, serif;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+    text-align: justify; /* Căn đều văn bản cho dễ đọc */
+}
 #header {
   display:flex;
   align-items: center;
@@ -44,16 +53,6 @@ justify-content: center;
   left:20px;
 }
 
-body {
-    font-family: 'Playfair Display', serif;
-    color: #333;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    transition: all 0.3s ease-in-out;
-    text-align: justify; /* Căn đều văn bản cho dễ đọc */
-}
-
 .header {
     text-align: center;
     background: linear-gradient(to right, #fff, #eaeaea);
@@ -71,10 +70,10 @@ body {
 
 .blog-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột */
-    gap: 10px; /* Khoảng cách giữa các bài viết */
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 27px; /* Khoảng cách giữa các bài viết */
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto; /* Căn giữa container */
     box-sizing: border-box;
 }
