@@ -1,359 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="product.css">
     <title>Trang Sản Phẩm</title>
-    <style>
-        #header {
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #ffffff;
-    box-shadow:  0 5px 15px rgba(0,0,0,0.06);;
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-  }
-  #navbar {
-  display:flex;
-  align-items:center;
-  justify-content: center;
-  }
-  #navbar li {
-    list-style: none;
-    padding:0 20px;
-    position:relative;
-  }
-  #navbar li a {
-    text-decoration: none ;
-    font-size: 20px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition:  0.3s ease;
-  }
-  #navbar li a:hover,
-  #navbar li a.active {
-    color:#757070;
-  }
-  #navbar li a.active::after,
-  #navbar li a:hover::after {
-    content:"";
-    width: 30%;
-    background: #757070;
-    height: 2px;
-    position: absolute;
-    bottom: -4px;
-    left:20px;
-  }
-
-
-
-        body {
-            font-family:  'Playfair Display', serif;
-            margin: 0;
-            padding: 0;
-            background-color: white;
-        }
-
-        .container {
-            width: 1200px;
-            margin: 0 auto;
-            background-color: #fff;
-        }
-
-        .product-details {
-            display: flex;
-            padding: 20px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .product-image {
-            width: 40%;
-            padding-right: 20px;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: auto;
-        }
-        .product:hover {
-            transform: scale(1.05);
-            border-color: black;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        
-
-    .product:hover a {
-        background-color: rgba(0, 0, 0, 0.1); /* Thêm màu nền nhẹ khi hover */
-    }
-
-        .product-info {
-            width: 60%;
-        }
-
-        .product-info h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        .product-info p {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .product-info .price {
-            font-size: 20px;
-            color: black;
-            margin: 15px 0;
-        }
-
-        .product-info .star {
-            font-size: 16px;
-            color: #e9cc2893;
-        }
-
-        .product-info select,
-        .product-info input[type="number"] {
-            padding: 8px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            width: 45%; /* Làm thanh chọn số lượng ngắn lại */
-            font-size: 14px;
-        }
-
-        .product-info button {
-            background-color: black;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 60%;
-            transition: background-color 0.3s;
-        }
-
-        .product-info button:hover {
-            background-color: #5c4d3d; /* Thêm hiệu ứng hover */
-        }
-
-        .tabs {
-            margin-top: 20px;
-            display: flex;
-            cursor: pointer;
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .tabs li {
-            margin-right: 20px;
-            padding: 10px;
-            background-color: #dddd;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .tabs li.active {
-            background-color: black;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border-top: 1px solid #ddd;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .suggestions {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        .suggestions h2 {
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .suggestions .product {
-            display: inline-block;
-            width: 180px;
-            margin-right: 15px;
-            text-align: center;
-        }
-
-        .suggestions img {
-            width: 100%;
-            height: auto;
-        }
-
-        .size-options {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .size-option input[type="radio"] {
-            display: none;
-        }
-
-        .size-option label {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-size: 16px;
-            color: white;
-        }
-
-        .size-option input[type="radio"]:checked + label {
-            background-color: #787674;
-        }
-
-        .size-option label:hover {
-            background-color: #aaa;
-        }
-        footer {
-  background-color: #ffffff;
-  padding: 20px 40px;
-  color: #333;
-}
-
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-
-.footer-section {
-  flex: 1;
-  min-width: 200px;
-  max-width: 200px;
-}
-
-
-.footer-section h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #000;
-}
-.footer-section p{
-  font-size: 16px;
-  color:#666;
-}
-.footer-section span {
-  color:#000;
-}
-.footer-section a {
-  color:#666;
-  text-decoration: none;
-}
-.footer-section a:hover {
-  color:#000;
-}
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-
-.footer-section ul li {
-  margin-bottom: 5px;
-}
-
-
-.footer-section ul li a {
-  text-decoration: none;
-  color: #666;
-}
-
-
-.footer-section ul li a:hover {
-  color: #000000;
-}
-
-
-.social-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 20px;
-  color: #666;
-  text-decoration: none;
-}
-
-
-.social-icons a:hover {
-  color: #000000;
-}
-
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-  font-size: 14px;
-}
-
-
-.footer-bottom .language-switch a {
-  margin: 0 5px;
-  text-decoration: none;
-  color: #666;
-}
-.footer-bottom .language-switch a:hover {
-  color:#000;
-}
-.footer-bottom .language-switch a.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-
-.footer-bottom p {
-  margin-top: 5px;
-  color: #666;
-}
-
-
-.online {
-  color: green;
-  font-weight: bold;
-}
-
-
-.fa-envelope, .fa-phone {
-  margin-right: 5px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-    </style>
 </head>
-
+    
 <body>
     <section id="header">
         <div class="header-container">
@@ -363,31 +17,28 @@ a {
         </div>      
          <div>
             <ul id="navbar" class="navbar">
-            <li><a href="Trang chủ.html">Home</a></li>
-            <li><a class="active" href="shop.html">Cửa hàng</a></li>
-            <li><a href="aboutus.html">Về chúng tôi</a></li>
-            <li><a  href="blog.html">Blog</a></li>
+            <li><a class="active" href="Trang chủ.html">Home</a></li>
+            <li><a href="Cửa hàng.html">Cửa hàng</a></li>
+            <li><a href="Về chúng tôi.html">Về chúng tôi</a></li>
+            <li><a href="Blog.html">Blog</a></li>
             <li><a href="Liên hệ.html">Liên hệ</a></li>
             <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
             <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
-            <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-       
+            <li id="lg-bag"><a href="Giỏ hàng.html"> <i class="fa-solid fa-cart-shopping"></i></a></li>
+           
           </ul>
         </div>
       </section>
-    
-    
-    
-
+       
     <div class="container">
         <!-- Chi tiết sản phẩm -->
-        <div class="product-details" id="product-12">
+        <div class="products" id="12">
             <div class="product-image">
                 <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/ROCKY-TOP-4.jpg" alt="Sản phẩm">
             </div>
             <div class="product-info">
                 <h1>ROCKY TOP</h1>
-                <p class="price">₫980.000</p>
+                <p class="price">980.000VND</p>
                 <div class="star" >
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -395,7 +46,7 @@ a {
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                   </div>
-    <br>
+            <br>
                 <label for="size">Chọn Size:</label> <br>
                 <div class="size-options">
                     <div class="size-option">
@@ -415,14 +66,22 @@ a {
                         <label for="size-xl">XL</label>
                     </div>
                 </div>
+                <p>
+                    Kích cỡ người mẫu: <strong>S</strong> | 
+                    Chiều cao người mẫu: <strong>180cm</strong>
+                </p>
+                <label for="quantity">SỐ LƯỢNG</label>
+                <div class="quantity-controls">
+                    <label id="decrease" class="quantity-btn">-</label>
+                    <input type="text" id="quantity" value="01" readonly>
+                    <label id="increase" class="quantity-btn">+</label>
+                </div>
                 <br>
-                <label for="quantity">Số lượng:</label>
-                <input type="number" id="quantity" min="1" value="1">
-                <br>
-                <button>Thêm vào giỏ hàng</button>
+                
+                <button><a href="Giỏ hàng.html"> Thêm vào giỏ hàng<i class="fa-solid fa-cart-shopping"></i></a></button>
                 <br>
                 <br>
-                <button>Mua ngay</button>
+                <button><a href="Mua ngay.html"> Mua ngay</a></button>
             </div>
         </div>
 
@@ -456,8 +115,7 @@ a {
                 <li>Sản phẩm vẫn giữ nguyên trạng thái ban đầu bao gồm cả tem mác thương hiệu và phụ kiện đi kèm nếu có, không bị chỉnh sửa, không bị bẩn hoặc bị tác động bởi hóa chất, không được giặt ủi, không có mùi lạ và không có dấu hiệu đã sử dụng.</li>
                 <li>Trong trường hợp đổi trả, phí vận chuyển ban đầu sẽ không được hoàn lại.</li>
                 <li>Với các sản phẩm được đặt hàng trên các sàn thương mại điện tử (Shopee, Lazada, Tiktok), L Seoul sẽ tuân thủ chính sách đổi trả hàng của sàn.</li>
-            </ul>
-            
+            </ul>      
             <p><strong>II. Các trường hợp đổi trả sản phẩm:</strong></p>
             <ul>
                 <li><strong>L Seoul cam kết đổi trả miễn phí:</strong>
@@ -525,108 +183,6 @@ a {
                 <button onclick="addReview()">Gửi Đánh Giá</button>
             </div>
             
-            <style>
-                .reviews {
-                    margin: 20px 0;
-                    padding: 10px;
-                    background-color: #f9f9f9;
-                    border-radius: 8px;
-                }
-            
-                .review-form {
-                    margin-top: 20px;
-                    padding: 15px;
-                    background-color: #ffffff;
-                    border-radius: 8px;
-                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                }
-            
-                .review-form h3 {
-                    font-size: 20px;
-                    margin-bottom: 15px;
-                    color: #333;
-                }
-            
-                /* Cập nhật chiều rộng của textarea và input */
-                .review-form textarea, .review-form input {
-                    width: 60%;  /* Đặt chiều rộng là 60% cho cả hai */
-                    padding: 10px;
-                    margin: 10px 0;
-                    border-radius: 5px;
-                    border: 1px solid #ddd;
-                    font-size: 14px;
-                }
-            
-                .review-form button {
-                    background-color: #5F6F52;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    font-size: 16px;
-                    border-radius: 5px;
-                    cursor: pointer;
-                }
-            
-                .review-form button:hover {
-                    background-color: #5F6F52;
-                }
-            
-                .review {
-                    margin-bottom: 15px;
-                    padding: 10px;
-                    border: 1px solid #ddd;
-                    border-radius: 5px;
-                    background-color: #f1f1f1;
-                }
-            
-                .review strong {
-                    font-size: 16px;
-                    color: #333;
-                }
-            
-                .review p {
-                    font-size: 14px;
-                    color: #5F6F52;
-                }
-            </style>
-            
-            
-            <script>
-                let reviews = [];
-            
-                function addReview() {
-                    const reviewText = document.getElementById('review-text').value;
-                    const reviewName = document.getElementById('review-name').value;
-                    
-                    // Kiểm tra nếu người dùng chưa nhập tên hoặc đánh giá
-                    if (!reviewText || !reviewName) {
-                        alert('Vui lòng nhập tên và đánh giá!');
-                        return;
-                    }
-            
-                    // Thêm đánh giá mới vào danh sách
-                    reviews.push({ name: reviewName, text: reviewText });
-                    displayReviews();  // Cập nhật lại danh sách đánh giá
-                    document.getElementById('review-text').value = '';  // Xóa nội dung textarea
-                    document.getElementById('review-name').value = '';  // Xóa tên người dùng
-                }
-            
-                function displayReviews() {
-                    const reviewList = document.getElementById('review-list');
-                    reviewList.innerHTML = '';  // Xóa danh sách đánh giá cũ
-            
-                    // Hiển thị tất cả đánh giá
-                    reviews.forEach((review) => {
-                        const reviewItem = document.createElement('div');
-                        reviewItem.classList.add('review');
-                        reviewItem.innerHTML = `
-                            <strong>${review.name}</strong>
-                            <p>${review.text}</p>
-                        `;
-                        reviewList.appendChild(reviewItem);
-                    });
-                }
-            </script>
             
         </div>
 
@@ -659,22 +215,7 @@ a {
     </a>
     </div>
 
-    <script>
-        // Chức năng chuyển tab
-        const tabs = document.querySelectorAll('.tabs li');
-        const contents = document.querySelectorAll('.tab-content');
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const target = document.getElementById(tab.getAttribute('data-tab'));
-                tabs.forEach(t => t.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
-
-                tab.classList.add('active');
-                target.classList.add('active');
-            });
-        });
-    </script>
     <footer>
         <div class="footer-container">
           <div class="footer-section">
@@ -729,8 +270,72 @@ a {
         </div>
       </footer>
     
-    
+      <script>
 
+    //Tăng, giảm số lượng sản phẩm
+     document.getElementById('increase').addEventListener('click', function() {
+    let quantityInput = document.getElementById('quantity');
+    let currentValue = parseInt(quantityInput.value);
+    quantityInput.value = (currentValue + 1).toString().padStart(2, '0'); // Tăng 1 và đảm bảo 2 chữ số
+});
+
+document.getElementById('decrease').addEventListener('click', function() {
+    let quantityInput = document.getElementById('quantity');
+    let currentValue = parseInt(quantityInput.value);
+    if (currentValue > 1) { // Đảm bảo không giảm xuống dưới 1
+        quantityInput.value = (currentValue - 1).toString().padStart(2, '0'); // Giảm 1 và đảm bảo 2 chữ số
+    }
+});
+ // Chức năng chuyển tab
+        const tabs = document.querySelectorAll('.tabs li');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = document.getElementById(tab.getAttribute('data-tab'));
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                target.classList.add('active');
+            });
+        });
+
+//Đánh giá sản phẩm
+let reviews = [];
+            
+            function addReview() {
+                const reviewText = document.getElementById('review-text').value;
+                const reviewName = document.getElementById('review-name').value;
+                
+                // Kiểm tra nếu người dùng chưa nhập tên hoặc đánh giá
+                if (!reviewText || !reviewName) {
+                    alert('Vui lòng nhập tên và đánh giá!');
+                    return;
+                }
+        
+                // Thêm đánh giá mới vào danh sách
+                reviews.push({ name: reviewName, text: reviewText });
+                displayReviews();  // Cập nhật lại danh sách đánh giá
+                document.getElementById('review-text').value = '';  // Xóa nội dung textarea
+                document.getElementById('review-name').value = '';  // Xóa tên người dùng
+            }
+        
+            function displayReviews() {
+                const reviewList = document.getElementById('review-list');
+                reviewList.innerHTML = '';  // Xóa danh sách đánh giá cũ
+        
+                // Hiển thị tất cả đánh giá
+                reviews.forEach((review) => {
+                    const reviewItem = document.createElement('div');
+                    reviewItem.classList.add('review');
+                    reviewItem.innerHTML = `
+                        <strong>${review.name}</strong>
+                        <p>${review.text}</p>
+                    `;
+                    reviewList.appendChild(reviewItem);
+                });
+            }
+</script> 
 </body>
-
 </html>
