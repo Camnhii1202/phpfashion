@@ -1,0 +1,357 @@
+  /* Tổng thể */
+  body {
+    font-family: Arial, serif;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    color: #333;
+    min-height: 1500px; /* Đặt chiều cao tối thiểu cho body */
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+display:flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px 80px;
+background: #ffffff;
+box-shadow:  0 5px 15px rgba(0,0,0,0.06);;
+z-index: 999;
+position: sticky;
+top: 0;
+left: 0;
+}
+#navbar {
+display:flex;
+align-items:center;
+justify-content: center;
+}
+#navbar li {
+list-style: none;
+padding:0 20px;
+position:relative;
+}
+#navbar li a {
+text-decoration: none ;
+font-size: 18px;
+font-weight: 600;
+color: #1a1a1a;
+transition:  0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.active {
+color:#757070;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after {
+content:"";
+width: 30%;
+background: #757070;
+height: 2px;
+position: absolute;
+bottom: -4px;
+left:20px;
+}
+
+main {
+    display: flex;
+    margin: 20px;
+    flex-grow: 1; /* Để phần main chiếm phần còn lại của trang */
+}
+a {
+    text-decoration: none;
+}
+/* Sidebar - Bộ lọc */
+.sidebar {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.sidebar label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.sidebar select, .sidebar input[type="range"], .sidebar input[type="checkbox"], .sidebar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+/* Tùy chỉnh dropdown */
+.sidebar select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: black; /* Màu chữ trắng */
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Tùy chỉnh màu khi chọn item trong dropdown */
+.sidebar select option {
+    background-color: #4e362975; /* Màu nền của các item */
+    color: white; /* Màu chữ của các item */
+}
+
+/* Tùy chỉnh màu của item khi người dùng hover qua */
+.sidebar select option:hover {
+    background-color:#4e362975; /* Màu nền khi hover */
+}
+
+/* Tùy chỉnh màu nền của lựa chọn mặc định (khi chưa chọn gì) */
+.sidebar select option:checked {
+    background-color: #4e362975; /* Màu nền của lựa chọn mặc định */
+    color: white; /* Màu chữ của lựa chọn mặc định */
+}
+
+
+/* Thanh tìm kiếm nhỏ gọn */
+.sidebar input[type="text"] {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+}
+/* Tùy chỉnh màu thanh lọc */
+.sidebar input[type="range"] {
+    -webkit-appearance: none; /* Xóa kiểu mặc định của thanh lọc trên các trình duyệt Webkit */
+    appearance: none;
+    width: 100%;
+    height: 2px; 
+    border-radius: 5px;
+    outline: none; 
+    transition: background 0.3s ease;
+}
+
+/* Tùy chỉnh phần nút trượt */
+.sidebar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4e3629c7; /* Màu nút trượt cà phê đậm */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sidebar input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4e362975; /* Màu nút trượt cà phê đậm */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Tùy chỉnh văn bản hiển thị dưới thanh lọc */
+.sidebar input[type="range"] + .range-output {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+/* Danh sách sản phẩm */
+.product-list {
+    flex: 3;
+}
+
+.product-list h2 {
+    margin-bottom: 15px;
+    color: black;
+    font-size: 1.5rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-list img {
+    width: 100%;
+    max-width: 100%;
+    height: 270px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.product h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: black;
+   
+}
+
+
+.product p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.product .price {
+    color: #809671;
+    font-weight: bold;
+}
+
+/* Hover hiệu ứng */
+.product:hover {
+    transform: scale(1.05);
+    border-color: #b3b792;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sản phẩm đã xem gần đây */
+.recent-viewed {
+    margin-top: 40px;
+}
+
+.recent-viewed h2 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 15px;
+}
+
+footer {
+background-color: #ffffff;
+padding: 20px 40px;
+color: #333;
+}
+
+
+.footer-container {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-wrap: wrap;
+gap: 30px;
+}
+
+
+.footer-section {
+flex: 1;
+min-width: 200px;
+max-width: 200px;
+}
+
+
+.footer-section h4 {
+font-size: 16px;
+font-weight: 600;
+margin-bottom: 10px;
+color: #000;
+}
+.footer-section p{
+font-size: 16px;
+color:#666;
+}
+.footer-section span {
+color:#000;
+}
+.footer-section a {
+color:#666;
+text-decoration: none;
+}
+.footer-section a:hover {
+color:#000;
+}
+.footer-section ul {
+list-style: none;
+padding: 0;
+}
+
+
+.footer-section ul li {
+margin-bottom: 5px;
+}
+
+
+.footer-section ul li a {
+text-decoration: none;
+color: #666;
+}
+
+
+.footer-section ul li a:hover {
+color: #000000;
+}
+
+
+.social-icons a {
+display: inline-block;
+margin-right: 10px;
+font-size: 20px;
+color: #666;
+text-decoration: none;
+}
+
+
+.social-icons a:hover {
+color: #000000;
+}
+
+
+.footer-bottom {
+text-align: center;
+margin-top: 20px;
+border-top: 1px solid #ddd;
+padding-top: 10px;
+font-size: 14px;
+}
+
+
+.footer-bottom .language-switch a {
+margin: 0 5px;
+text-decoration: none;
+color: #666;
+}
+.footer-bottom .language-switch a:hover {
+color:#000;
+}
+.footer-bottom .language-switch a.active {
+font-weight: bold;
+text-decoration: underline;
+}
+
+
+.footer-bottom p {
+margin-top: 5px;
+color: #666;
+}
+
+
+.online {
+color: green;
+font-weight: bold;
+}
+
+
+.fa-envelope, .fa-phone {
+margin-right: 5px;
+}
+
+
