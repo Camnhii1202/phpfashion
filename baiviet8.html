@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="blog.css">
 </head>
 <style>
+  .blog-container {
+    border: 1px solid #e0e0e0; /* Viền nhẹ cho card */
+    border-radius: 8px; /* Bo góc card */
+    overflow: hidden; /* Cắt nội dung tràn */
+    background-color: #ffffffa9; /* Nền trắng */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bóng mờ tạo độ nổi */
+  }
     img {
       width: 90%;
       max-width: 800px; /* Giới hạn chiều rộng ảnh */
@@ -33,10 +40,10 @@
     </div>      
      <div>
         <ul id="navbar" class="navbar">
-        <li><a  href="Trang chủ.html">Home</a></li>
+        <li><a href="Trang chủ.html">Home</a></li>
         <li><a href="shop.html">Cửa hàng</a></li>
         <li><a href="aboutus.html">Về chúng tôi</a></li>
-        <li><a class="active" href="blog.html">Blog</a></li>
+        <li><a class="active"  href="blog.html">Blog</a></li>
         <li><a href="Liên hệ.html">Liên hệ</a></li>
         <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
         <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
@@ -45,7 +52,7 @@
       </ul>
     </div>
   </section>
-
+  <div class="blog-container">
   <main>
     <article>
       <h2>Định hình phong cách thương hiệu</h2>
@@ -67,7 +74,7 @@
       <p>Những thành công hiện tại của LSOUL là minh chứng cho tầm nhìn và nỗ lực, quyết tâm của founder. Hiện tại, Trọng Lâm vẫn hướng thương hiệu theo nhịp độ một bộ sưu tập mới mỗi tháng và đưa LSOUL bước ra thị trường quốc tế.</p>
     </article>
   </main>
-
+</div>
   <footer>
     <div class="footer-container">
       <div class="footer-section">
