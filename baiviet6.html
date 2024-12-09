@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="blog.css">
 </head>
 <style>
+  .blog-container {
+    border: 1px solid #e0e0e0; /* Viền nhẹ cho card */
+    border-radius: 8px; /* Bo góc card */
+    overflow: hidden; /* Cắt nội dung tràn */
+    background-color: #ffffffa9; /* Nền trắng */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bóng mờ tạo độ nổi */
+  }
     img {
   width: 90%;
   max-width: 800px; /* Giới hạn chiều rộng ảnh */
@@ -32,21 +39,19 @@ p {
           </a>
     </div>      
      <div>
-         <ul id="navbar" class="navbar">
-        <li><a  href="Trang chủ.html">Home</a></li>
+      <ul id="navbar" class="navbar">
+        <li><a href="Trang chủ.html">Home</a></li>
         <li><a href="shop.html">Cửa hàng</a></li>
         <li><a href="aboutus.html">Về chúng tôi</a></li>
-        <li><a class="active" href="blog.html">Blog</a></li>
+        <li><a class="active"  href="blog.html">Blog</a></li>
         <li><a href="Liên hệ.html">Liên hệ</a></li>
         <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
         <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
         <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-       
-       
       </ul>
     </div>
   </section>
-
+  <div class="blog-container">
   <main>
     <article>
       <h2>CEO Nguyễn Trọng Lâm đưa thương hiệu Việt LSEOUL bước ra thế giới</h2>
@@ -61,7 +66,7 @@ p {
       <p>Sự xuất hiện của LSEOUL tại các tuần lễ thời trang quốc tế như New York và London sẽ tiếp tục khẳng định sức mạnh và vị thế của thương hiệu Việt trên bản đồ thời trang thế giới.</p>
     </article>
   </main>
-
+</div>
   <footer>
     <div class="footer-container">
       <div class="footer-section">
