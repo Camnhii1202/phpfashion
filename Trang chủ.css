@@ -1,6 +1,7 @@
 /* CSS tổng quan */
 * {
-    font-family: Playfair Display,serif;
+    font-family: 'Spartan', sans-serif ;
+    font-weight: 300;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,11 +12,12 @@
     color: #222;
   }
   h2 {
-    font-size: 46px;
+    font-size: 40px;
     line-height: 64px;
     color: #222;
     text-align:center;
   }
+  
   h4 {
     font-size: 30px;
     color: #222;
@@ -25,8 +27,9 @@
     font-size: 12px;
   }
   p {
-    font-size: 12px;
-    color: #466b52;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
   }
   .section-p1 {
     padding:40px 80px;
@@ -34,6 +37,11 @@
   }
   .section-m1 {
     margin: 40px 0;
+  }
+  .section-n1 {
+    margin: 50px 0;
+    height: 300px;
+
   }
   button.normal {
     font-size: 14px;
@@ -62,6 +70,22 @@
   body {
     width: 100%;
   }
+  #hamburger-menu {
+    display: none; /* Ẩn mặc định */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1000;
+}
+
+#hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #222;
+    border-radius: 2px;
+}
+
   /* Header */
   #header {
     display:flex;
@@ -79,7 +103,22 @@
   display:flex;
   align-items:center;
   justify-content: center;
+  flex-direction: row;
+  list-style: none;
+  transition: 0.3s ease;
   }
+  #navbar.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
   #navbar li {
     list-style: none;
     padding:0 20px;
@@ -87,7 +126,7 @@
   }
   #navbar li a {
     text-decoration: none ;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: #1a1a1a;
     transition:  0.3s ease;
@@ -106,6 +145,19 @@
     bottom: -4px;
     left:20px;
   }
+  @media (max-width: 768px) {
+    #hamburger-menu {
+        display: flex; /* Hiển thị biểu tượng hamburger */
+    }
+
+    #navbar {
+        display: none; /* Ẩn menu mặc định */
+    }
+
+    #navbar.active {
+        display: flex; /* Hiển thị menu khi nhấn hamburger */
+    }
+}
   /* banner*/
   #hero  {
     background: url('https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/12/STARGIRLS_MAIN-BANNER_PC-2-1536x1023.png');
@@ -203,13 +255,13 @@
   }
   #product1 .pro .des h4{
     color:#606063;
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
   }
   #product1 .pro .des h5 {
     padding-top: 7px;
     color:#1a1a1a;
-    font-size: 14px;
+    font-size: 15px;
     text-align: center;
   }
   #product1 .pro .des i {
@@ -246,6 +298,7 @@
   border-radius: 5px;
   font-size: 16px;
   transition: background-color 0.3s;
+  justify-content: center;
 }
 .view-more:hover {
   transform: scale(1.05)
@@ -267,9 +320,24 @@
 /* Small banner 2*/
 #sm-banner {
   display:flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap:wrap;
+  padding-top: 20px;
+  gap:20px;
 }
+#sm-banner .view-more-link{
+  text-decoration: none;
+  color: #666;
+}
+:root {
+  --font-primary: 'Spartan', sans-serif;
+  --color-text-primary: #222;
+  --color-text-secondary: #666;
+  --color-bg-primary: #ffffff;
+  --color-border: #707070;
+  --color-hover: #7d7f7e;
+}
+
 #sm-banner .banner-box {
   display: flex;
   flex-direction: column;
@@ -286,6 +354,7 @@
   cursor:pointer;
   transition: 0.2s ease;
   position: relative;
+  margin: 5px;
 }
 #sm-banner .banner-box2 {
   display: flex;
@@ -303,6 +372,7 @@
   cursor:pointer;
   transition: 0.2s ease;
   position: relative;
+  margin:10px;
 }
 #sm-banner h4 {
   color: #fff;
@@ -313,12 +383,12 @@
 #sm-banner h2 {
   color: #fff;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 100px;
 }
 #sm-banner span {
   color: #fff;
   font-size:14px;
-  font-weight: 500;
+  font-weight: 100px;
   padding-bottom: 15px;
 }
 #sm-banner .banner-box:hover button {
@@ -335,25 +405,41 @@
   transition: background 0.2s ease, transform 0.2s ease;
   transform: scale(1,1);
 }
-
+@media (max-width: 768px) {
+  #sm-banner {
+      flex-direction: column; /* Chuyển sang cột trên thiết bị di động */
+      align-items: center; /* Căn giữa các banner */
+  }
+}
 
  @media (max-width: 768px) {
-  #banner3 {
+
+    #banner3 {
       grid-template-columns: 1fr; /* 1 cột trên thiết bị di động */
   }
 }
 /* Feedback*/
 #feedback {
   text-align:center;
+
+}
+#feedback .view-more {
+  margin-top: 50px;
+}
+#feedback .view-more-link 
+{
+  text-decoration: none;
+  color:#666;
 }
 #feedback p {
   color:#606063;
 }
 #feedback .pro-container {
   display:flex;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 20px;
   flex-wrap:wrap;
+  gap:22px;
 }
 #feedback1 .pro{
   display:flex;
@@ -383,18 +469,128 @@
 }
 
 /*banner small*/
-#banner3 {
+.banner3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Chiều cao của banner */
+  overflow: hidden; /* Ẩn phần dư thừa */
+  background-color: #f0f0f0; /* Màu nền cho banner */
+  background-image: url('https://lsoul.b-cdn.net/wp-content/uploads/2024/10/PC_OFF_BANNER-2-1536x512.jpg'); /* Đặt hình nền cho banner */
+  background-size: cover; /* Phủ kín vùng */
+  background-attachment: fixed; /* Hiệu ứng parallax */
+  background-position: center; /* Căn giữa hình nền */
+  
+}
+
+.banner3-image {
+  width: 100%; /* Chiều rộng tự động */
+  height: auto; /* Tự động điều chỉnh chiều cao */
+  max-height: 100%; /* Đảm bảo không vượt quá chiều cao của banner */
+  border-radius: 10px; /* Bo góc cho hình ảnh */
+  object-fit: cover;
+  
+
+}
+
+.brand-story {
+  background-color: #fff;
+  padding: 80px;
+  text-align: center;
+  margin: 20px auto;
+  max-width:100%;
+  border-radius: 8px;
+  margin-bottom:5px;
+}
+.brand-story .view-more{
+  display: flex;
+  text-align: center;
+  justify-content: center; 
+}
+.brand-story .view-more-link{
+  display: flex;
+  text-align: center;
+  justify-content: center; 
+  color:#666;
+  text-decoration:none;
+}
+.brand-container h2 {
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.brand-summary {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+.section-title {
+  font-size: 40px;
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+.news-section {
+  padding: 80px;
+  background-color: #fff;
+  text-align: center;
+}
+.news-section .view-more{
+  display: flex;
+  text-align: center;
+  justify-content: center; 
+}
+.news-section .view-more-link{
+  display: flex;
+  text-align: center;
+  justify-content: center; 
+  color:#666;
+  text-decoration:none;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.news-item {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  text-align:center;
-  background-image: url("https://lsoul.b-cdn.net/wp-content/uploads/2024/10/PC_OFF_BANNER-2-1536x512.jpg");
-  width:100%;
-  height: 300px;
-  background-size:cover;
-  background-position: center top;
-  background-attachment: fixed;
 }
+
+.news-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.news-title {
+  font-size: 18px;
+  color: #333;
+  margin: 15px;
+}
+
+.news-meta {
+  font-size: 14px;
+  color: #777;
+  margin: 0 15px;
+}
+
+.news-excerpt {
+  font-size: 16px;
+  color: #555;
+  margin: 15px;
+  line-height: 1.6;
+}
+
  /* New Letter*/
  #newsletter {
     display: flex;
@@ -415,7 +611,7 @@
     
 }
 #newsletter p span {
-  color:#466b52;
+  color:#666;
   
 }
 #newsletter .form {
@@ -448,7 +644,6 @@
 footer {
   background-color: #ffffff;
   padding: 20px 40px;
-  font-family: Arial, sans-serif;
   color: #333;
 }
 
@@ -475,6 +670,7 @@ footer {
 .footer-section p{
   font-size: 16px;
   color:#666;
+  text-align: left;
 }
 .footer-section span {
   color:#000;
@@ -550,3 +746,38 @@ footer {
 .fa-envelope, .fa-phone {
   margin-right: 5px;
 }
+@media (max-width: 480px) {
+  #header {
+    padding: 10px 20px;
+  }
+
+  #navbar li {
+    padding: 0 10px; /* Giảm padding giữa các mục menu */
+  }
+
+  #hero {
+    padding: 0 20px; /* Giảm padding cho không gian hẹp */
+    height: auto; /* Chiều cao động theo nội dung */
+    background-position: center top;
+  }
+
+  #product1 .pro {
+    width: 100%; /* Sản phẩm chiếm 100% màn hình trên thiết bị nhỏ */
+    min-width: auto;
+  }
+
+  #sm-banner .banner-box, 
+  #sm-banner .banner-box2 {
+    min-width: 100%; /* Banner chiếm toàn bộ chiều rộng */
+    height: auto; /* Chiều cao tự động theo nội dung */
+  }
+
+  h1, h2, h4 {
+    font-size: 24px; /* Giảm kích thước chữ trên màn hình nhỏ */
+  }
+
+  p {
+    font-size: 14px; /* Chữ nhỏ hơn để phù hợp với không gian hẹp */
+  }
+}
+ 
