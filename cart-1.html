@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        /* Header */
+  #header {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #ffffff;
+    box-shadow:  0 5px 15px rgba(0,0,0,0.06);;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+  #navbar {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: row;
+  list-style: none;
+  transition: 0.3s ease;
+  }
+  #navbar.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+  #navbar li {
+    list-style: none;
+    padding:0 20px;
+    position:relative;
+  }
+  #navbar li a {
+    text-decoration: none ;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition:  0.3s ease;
+  }
+  #navbar li a:hover,
+  #navbar li a.active {
+    color:#757070;
+  }
+  #navbar li a.active::after,
+  #navbar li a:hover::after {
+    content:"";
+    width: 30%;
+    background: #757070;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left:20px;
+  }
+  @media (max-width: 768px) {
+    #hamburger-menu {
+        display: flex; /* Hiển thị biểu tượng hamburger */
+    }
+
+    #navbar {
+        display: none; /* Ẩn menu mặc định */
+    }
+
+    #navbar.active {
+        display: flex; /* Hiển thị menu khi nhấn hamburger */
+    }
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            background: url('d748fb210234317.670dfd502fd3e.jpg')center/cover no-repeat;
+            background-color: rgba(255, 255, 255, 0.60); /* Lớp phủ màu trắng mờ */
+            background-blend-mode: overlay;
+        }
+
+        .cart-container {
+            width: 800px;
+            margin: 100px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .cart-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 0px;
+        }
+
+        .cart-item {
+            display: flex;
+           align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+
+        .cart-details {
+            flex: 1;
+        }
+
+        .cart-details p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cart-actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .cart-actions button:hover {
+        color: #000; /* Thay đổi màu chữ khi hover */
+        transform: scale(1.2); /* Tăng kích thước nút một chút */
+        }
+
+        .price {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .promo-code {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .promo-code input {
+            flex: 1;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .promo-code button {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .cart-summary {
+            margin-bottom: 20px;
+        }
+
+        .cart-summary p {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .checkout-btn :hover 
+        {
+        background-color: #333;
+        }
+        /* New Letter*/
+ #newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items:center;
+    background-color: #eaebea;
+ }
+#newsletter h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #030303;
+}
+#newsletter p {
+    font-size: 16px;
+    font-weight: 600px;
+    color: #787674
+    
+}
+#newsletter p span {
+  color:#666;
+  
+}
+#newsletter .form {
+  display: flex;
+  width: 30%;
+
+
+}
+#newsletter input {
+  height: 3.125rem;
+  padding: 0 1.25em;
+  font-size: 14px;
+  width:100%;
+  border:1px solid transparent;
+  border-radius: 4px;
+  outline:none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+}
+#newsletter button {
+  background-color: #030303;
+  color: #fff;
+  white-space: nowrap;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/*footer*/
+footer {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  max-width: 200px; 
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #000;
+}
+.footer-section p{
+  font-size: 16px;
+  color:#666;
+  text-align: left;
+}
+.footer-section span {
+  color:#000;
+}
+.footer-section a {
+  color:#666;
+  text-decoration: none;
+}
+.footer-section a:hover {
+  color:#000;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #666;
+}
+
+.footer-section ul li a:hover {
+  color: #000000;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 20px;
+  color: #666;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #000000;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.footer-bottom .language-switch a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #666;
+}
+.footer-bottom .language-switch a:hover {
+  color:#000;
+}
+.footer-bottom .language-switch a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.footer-bottom p {
+  margin-top: 5px;
+  color: #666;
+}
+
+.online {
+  color: green;
+  font-weight: bold;
+}
+
+.fa-envelope, .fa-phone {
+  margin-right: 5px;
+}
+@media (max-width: 480px) {
+  #header {
+    padding: 10px 20px;
+  }
+
+  #navbar li {
+    padding: 0 10px; /* Giảm padding giữa các mục menu */
+  }
+
+  #hero {
+    padding: 0 20px; /* Giảm padding cho không gian hẹp */
+    height: auto; /* Chiều cao động theo nội dung */
+    background-position: center top;
+  }
+
+  #product1 .pro {
+    width: 100%; /* Sản phẩm chiếm 100% màn hình trên thiết bị nhỏ */
+    min-width: auto;
+  }
+
+  #sm-banner .banner-box, 
+  #sm-banner .banner-box2 {
+    min-width: 100%; /* Banner chiếm toàn bộ chiều rộng */
+    height: auto; /* Chiều cao tự động theo nội dung */
+  }
+
+  h1, h2, h4 {
+    font-size: 24px; /* Giảm kích thước chữ trên màn hình nhỏ */
+  }
+
+  p {
+    font-size: 14px; /* Chữ nhỏ hơn để phù hợp với không gian hẹp */
+  }
+}
+    </style>
+</head>
+<body>
+<!-- Header --> 
+<section id="header">
+    <div class="header-container">
+          <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
+            <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
+          </a>
+    </div>  
+     
+     <div>
+        <ul id="navbar" class="navbar"> 
+        <li><a class="active" href="Trang chủ.html">Trang chủ</a></li>
+        <li><a href="shop.html">Cửa hàng</a></li>
+        <li><a href="aboutus.html">Về chúng tôi</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="Liên hệ 2.html">Liên hệ</a></li>
+        <li id="lg-acc"><a href="login_1.html"><i class="fa-solid fa-user"></i></a></li>
+        <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
+        <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+        </div>
+  </section>
+    <div class="cart-container">
+        <div class="cart-header">GIỎ HÀNG</div>
+        <div class="cart-item">
+            <img src="https://via.placeholder.com/80x100" alt="Lind Dress">
+            <div class="cart-details">
+                <p>LIND DRESS</p>
+                <p>Kích cỡ: M</p>
+                <p>Số lượng: x1</p>
+                <p class="price">1.300.000₫</p>
+            </div>
+            <div class="cart-actions">
+                <a href="cart-2.html"><button>&#9998;</button></a>
+                <a href="delete_cart.html"><button>&#128465;</button></a>
+            </div>
+        </div>
+
+        <div class="promo-code">
+            <input type="text" placeholder="Nhập mã giảm giá">
+            <button>Áp dụng</button>
+        </div>
+
+        <div class="cart-summary">
+            <p><span>Giá tạm tính</span><span>1.300.000₫</span></p>
+            <p class="total"><span>Tổng tiền</span><span>1.300.000₫</span></p>
+            <p style="font-size: 12px;">(Tax excluded, where applicable)</p>
+        </div>
+
+       <a href="checkout_1.1.html"> <button class="checkout-btn">ĐẶT HÀNG</button></a>
+    </div>
+    <!--New-letter-->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4> ĐĂNG KÝ NHẬN BẢNG TIN</h4>
+      <p> Nhận thông tin cập qua qua Email về cửa hàng mới nhất của chúng tôi và <span> các ưu đãi đặc biệt </span> </p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder = "info@lsoul.com">
+      <button class="normal"> Đăng ký </button>
+
+    </div>
+    <div>
+
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>CHÚNG TÔI CÓ THỂ GIÚP GÌ</h4>
+        <p><a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a></p>
+        <p><i class="fa-solid fa-phone"></i> +84777071707 <span class="online">Online</span></p>
+        <p>Opening hours 8:30 AM - 10 PM</p>
+      </div>
+      <div class="footer-section">
+        <h4>VỀ LSOUL</h4>
+        <ul>
+          <li><a href="aboutus.html">Về Chúng Tôi</a></li>
+          <li><a href="#">Feedback</a></li>
+          <li><a href="shop.html">Cửa Hàng</a></li>
+          <li><a href="#">Work With Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>CHÍNH SÁCH LSOUL</h4>
+        <ul>
+          <li><a href="policy.html">Chính Sách Đổi Trả</a></li>
+          <li><a href="policy.html">Chính Sách Bảo Mật</a></li>
+          <li><a href="policy.html">Hướng Dẫn Thanh Toán</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>DANH MỤC</h4>
+        <ul>
+          <li><a href="#">Set</a></li>
+          <li><a href="#">Đầm</a></li>
+          <li><a href="#">Áo</a></li>
+          <li><a href="#">Quần</a></li>
+          <li><a href="#">Chân Váy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>THEO DÕI CHÚNG TÔI</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/lsoul.officiel"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/lsoul.officiel/"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@lsoul.officiel?_t=8qumpMMgNyg&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.youtube.com/@lsoulofficial"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://shopee.vn/lsoul.vn"><i class="fa-solid fa-shop"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="language-switch">
+        🌐 <a href="#">THAI</a> | <a href="#">ENGLISH</a> | <a href="#" class="active">TIẾNG VIỆT</a>
+      </div>
+      <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
+    </div>
+  </footer>
+  <script src="Trang chủ.js">
+  </script>
+</body>
+</html>
+</body>
+</html>
