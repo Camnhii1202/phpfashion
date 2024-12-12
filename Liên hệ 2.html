@@ -14,20 +14,31 @@
           <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
             <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
           </a>
-    </div>      
-     <div>
-        <ul id="navbar" class="navbar"> 
-        <li><a  href="Trang chủ.html">Trang chủ </a></li>
-        <li><a href="Cửa hàng.html">Cửa hàng</a></li>
-        <li><a href="Về chúng tôi.html">Về chúng tôi</a></li>
-        <li><a href="Blog.html">Blog</a></li>
-        <li><a class="active" href="Liên hệ.html">Liên hệ</a></li>
-        <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
-        <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
-        <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-      </ul>
-    </div>
-  </section>
+    </div>     
+    <div>
+      <ul id="navbar" class="navbar"> 
+      <li><a  href="Trang chủ.html">Trang chủ</a></li>
+      <li><a href="shop.html">Cửa hàng</a></li>
+      <li><a href="aboutus.html">Về chúng tôi</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a class="active" href="Liên hệ 2.html">Liên hệ</a></li>
+      <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
+      <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
+      <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>  
+    </ul>
+  </div>
+  <div class="menu-icon" id="menu-icon">☰</div> 
+</section>
+<div class="mobile-menu" id="mobile-menu">
+  <span class="close-btn" id="close-btn">&times;</span>
+  <nav>
+      <a href="Trang chủ.html">Trang chủ</a>
+      <a href="shop.html">Cửa hàng</a>
+      <a href="aboutus.html">Về chúng tôi</a>
+      <a href="blog.html">Blog</a>
+      <a href="Liên hệ 2.html">Liên hệ</a>
+  </nav>
+</div>
   
   <main class="contact-container">
     <!-- Thông tin liên hệ -->
@@ -119,9 +130,9 @@
       <div class="footer-section">
         <h4>CHÍNH SÁCH LSOUL</h4>
         <ul>
-          <li><a href="#">Chính Sách Đổi Trả</a></li>
-          <li><a href="#">Chính Sách Bảo Mật</a></li>
-          <li><a href="#">Hướng Dẫn Thanh Toán</a></li>
+          <li><a href="policy.html">Chính Sách Đổi Trả</a></li>
+          <li><a href="policy.html">Chính Sách Bảo Mật</a></li>
+          <li><a href="policy.html">Hướng Dẫn Thanh Toán</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -152,5 +163,20 @@
       <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
     </div>
   </footer>
+
 </body>
+<script>
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-btn');
+
+    menuIcon.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+    });
+</script>
+
 </html>
