@@ -8,26 +8,38 @@
     <title>L SOUL </title>
 </head>
 <body>
-    <section id="header">
-        <div class="header-container">
-              <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
-                <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
-              </a>
-        </div>      
-         <div>
-            <ul id="navbar" class="navbar">
-            <li><a href="Trang chủ.html">Home</a></li>
-            <li><a class="active"href="shop.html">Cửa hàng</a></li>
+  <section id="header">
+    <div class="header-container">
+        <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
+            <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
+        </a>
+    </div>  
+    <div>
+        <ul id="navbar" class="navbar">
+            <li><a href="Trang chủ.html">Trang chủ</a></li>
+            <li><a class="active" href="shop.html">Cửa hàng</a></li>
             <li><a href="aboutus.html">Về chúng tôi</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="Liên hệ.html">Liên hệ</a></li>
+            <li><a href="Liên hệ 2.html">Liên hệ</a></li>
             <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
             <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
             <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-           
-          </ul>
-        </div>
-      </section>
+        </ul>
+    </div>
+    <div class="menu-icon" id="menu-icon">☰</div>
+</section>
+
+<div class="mobile-menu" id="mobile-menu">
+    <span class="close-btn" id="close-btn">&times;</span>
+    <nav>
+        <a href="Trang chủ.html">Trang chủ</a>
+        <a href="shop.html">Cửa hàng</a>
+        <a href="aboutus.html">Về chúng tôi</a>
+        <a href="blog.html">Blog</a>
+        <a href="Liên hệ 2.html">Liên hệ</a>
+    </nav>
+</div>
+
     
 
     <main>
@@ -150,7 +162,7 @@
         let recentViewed = [];
 
         // Hàm render sản phẩm
-        function renderProducts(filteredProducts) {
+function renderProducts(filteredProducts) {
     const productList = document.getElementById('product-list');
     productList.innerHTML = '';
     filteredProducts.forEach(product => {
@@ -170,6 +182,9 @@
         productList.appendChild(productElement);
     });
 }
+
+// Gọi hàm để hiển thị tất cả sản phẩm
+renderProducts(products);
 
         // Thêm sản phẩm vào danh sách đã xem gần đây
         function addToRecentView(product) {
@@ -224,6 +239,30 @@
             document.getElementById('price-range').textContent = `${(event.target.value - 100000).toLocaleString()} VND - ${(event.target.value).toLocaleString()} VND`;
             filterProducts();
         });
+
+        // Lấy các phần tử cần thiết
+const menuIcon = document.getElementById("menu-icon");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeBtn = document.getElementById("close-btn");
+
+// Khi nhấn vào biểu tượng menu
+menuIcon.addEventListener("click", () => {
+    mobileMenu.classList.add("open"); // Thêm class "open" để mở menu
+});
+
+// Khi nhấn vào nút đóng menu
+closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("open"); // Loại bỏ class "open" để đóng menu
+});
+
+// Đóng menu khi nhấn vào bất kỳ link nào trong menu
+const navLinks = mobileMenu.querySelectorAll("a");
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+    });
+});
+
     </script>
 </body>
 </html>
