@@ -8,27 +8,37 @@
     <title>Chính sách LSOUL</title>
 </head>
 <body>
-    <section id="header">
-        <div class="header-container">
-              <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
-                <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
-              </a>
-        </div>      
-         <div>
-            <ul id="navbar" class="navbar">
-        <li><a  href="Trang chủ.html">Home</a></li>
+  <section id="header">
+    <div class="header-container">
+          <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
+            <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
+          </a>
+    </div>  
+     <div>
+        <ul id="navbar" class="navbar">
+        <li><a href="Trang chủ.html">Trang chủ</a></li>
         <li><a href="shop.html">Cửa hàng</a></li>
         <li><a href="aboutus.html">Về chúng tôi</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="Liên hệ.html">Liên hệ</a></li>
+        <li><a href="Liên hệ 2.html">Liên hệ</a></li>
         <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
         <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
         <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-       
-           
-          </ul>
+        </ul>
         </div>
-      </section>    
+        <div class="menu-icon" id="menu-icon">☰</div>
+  </section>
+  <div class="mobile-menu" id="mobile-menu">
+    <span class="close-btn" id="close-btn">&times;</span>
+    <nav>
+        <a href="Trang chủ.html">Trang chủ</a>
+        <a href="shop.html">Cửa hàng</a>
+        <a href="aboutus.html">Về chúng tôi</a>
+        <a href="blog.html">Blog</a>
+        <a href="Liên hệ 2.html">Liên hệ</a>
+    </nav>
+  </div>
+   
     <img src="https://bazaarvietnam.vn/wp-content/uploads/2024/07/Harpers-Bazaar-BABYMONSTER-mac-trang-phuc-LSEOUL-trong-MV-Forever_02.jpg" alt="L SOUL" style="width: 100%; height: 15%; margin-bottom: 5px;">
 
     <div class="container">
@@ -86,7 +96,7 @@
             <p>Tại nội thành TP Hồ Chí Minh, phí giao hàng sẽ được miễn phí.</p>
         </div>
         <div id="privacy" class="content">
-            <h2>Chính sách đổi trả - Bảo hành</h2>
+            <h2>Chính sách bảo mật</h2>
             <p>Bảo vệ thông tin và dữ liệu khách hàng luôn là một vấn đề quan trọng với chúng tôi, do đó chúng tôi chỉ sử dụng tên và một số thông tin có liên quan đến giao dịch giữa chúng tôi và quý khách trong một số trường hợp nhất định được đề ra trong chính sách bảo mật này.</p>
             <p>Quý khách có thể ghé thăm trang web lsoul.com mà không cần cung cấp thông tin cá nhân nào trừ trường hợp quý khách đăng ký tài khoản để đăng nhập bằng tên và mật khẩu của mình.</p>
             <p>Nếu quý khách không hiểu rõ hoặc có ý kiến đóng góp về chính sách bảo mật này, xin vui lòng gửi email đến <a href="mailto:info@lsoul.com" style="color: #b3b792; text-decoration: none;">info@lsoul.com</a>. Chúng tôi luôn sẵn sàng lắng nghe và tiếp nhận ý kiến của quý khách.</p>
@@ -254,6 +264,31 @@
             const activeButton = Array.from(buttons).find(button => button.textContent.includes(document.getElementById(id).querySelector('h2').textContent));
             if (activeButton) activeButton.classList.add('active');
         }
+
+    //Tuỳ chỉnh manu điều hướng khi chuyển sang giao diện điện thoại
+    const menuIcon = document.getElementById("menu-icon");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeBtn = document.getElementById("close-btn");
+
+// Khi nhấn vào biểu tượng menu
+menuIcon.addEventListener("click", () => {
+    mobileMenu.classList.add("open"); // Thêm class "open" để mở menu
+});
+
+// Khi nhấn vào nút đóng menu
+closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("open"); // Loại bỏ class "open" để đóng menu
+});
+
+// Đóng menu khi nhấn vào bất kỳ link nào trong menu
+const navLinks = mobileMenu.querySelectorAll("a");
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+    });
+});
+
+
     </script>
 </body>
 </html>
