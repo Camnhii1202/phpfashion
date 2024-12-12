@@ -70,21 +70,6 @@
   body {
     width: 100%;
   }
-  #hamburger-menu {
-    display: none; /* Ẩn mặc định */
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    z-index: 1000;
-}
-
-#hamburger-menu span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #222;
-    border-radius: 2px;
-}
 
   /* Header */
   #header {
@@ -145,19 +130,7 @@
     bottom: -4px;
     left:20px;
   }
-  @media (max-width: 768px) {
-    #hamburger-menu {
-        display: flex; /* Hiển thị biểu tượng hamburger */
-    }
-
-    #navbar {
-        display: none; /* Ẩn menu mặc định */
-    }
-
-    #navbar.active {
-        display: flex; /* Hiển thị menu khi nhấn hamburger */
-    }
-}
+  
   /* banner*/
   #hero  {
     background: url('https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/12/STARGIRLS_MAIN-BANNER_PC-2-1536x1023.png');
@@ -170,7 +143,15 @@
     align-items: flex-start;
     justify-content: center;
   }  
-  
+  #hero img {
+    width: 100%; /* Ảnh luôn đầy chiều rộng */
+    height: 100%; /* Chiều cao đầy đủ */
+    object-fit: cover; /* Hoặc contain nếu cần */
+    position: absolute; /* Đưa ảnh xuống dưới nội dung */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Đưa ảnh nền ra phía sau */
+  }
 
   #hero h4 {
     padding-bottom: 15px;
@@ -405,19 +386,7 @@
   transition: background 0.2s ease, transform 0.2s ease;
   transform: scale(1,1);
 }
-@media (max-width: 768px) {
-  #sm-banner {
-      flex-direction: column; /* Chuyển sang cột trên thiết bị di động */
-      align-items: center; /* Căn giữa các banner */
-  }
-}
 
- @media (max-width: 768px) {
-
-    #banner3 {
-      grid-template-columns: 1fr; /* 1 cột trên thiết bị di động */
-  }
-}
 /* Feedback*/
 #feedback {
   text-align:center;
@@ -480,19 +449,8 @@
   background-size: cover; /* Phủ kín vùng */
   background-attachment: fixed; /* Hiệu ứng parallax */
   background-position: center; /* Căn giữa hình nền */
-  
+  background-repeat: no-repeat;
 }
-
-.banner3-image {
-  width: 100%; /* Chiều rộng tự động */
-  height: auto; /* Tự động điều chỉnh chiều cao */
-  max-height: 100%; /* Đảm bảo không vượt quá chiều cao của banner */
-  border-radius: 10px; /* Bo góc cho hình ảnh */
-  object-fit: cover;
-  
-
-}
-
 .brand-story {
   background-color: #fff;
   padding: 80px;
@@ -746,32 +704,122 @@ footer {
 .fa-envelope, .fa-phone {
   margin-right: 5px;
 }
-@media (max-width: 480px) {
+
+/* responsive*/
+/*Thêm menu header*/
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu .close-btn {
+  text-align: right;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.mobile-menu nav {
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+.mobile-menu nav a {
+text-decoration: none ;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition:  0.3s ease;
+
+}
+.mobile-menu nav a:hover {
+color:#757070;
+}
+@media (max-width: 830px) {
+ 
   #header {
+    flex-direction: column;
     padding: 10px 20px;
   }
-
-  #navbar li {
-    padding: 0 10px; /* Giảm padding giữa các mục menu */
-  }
-
-  #hero {
-    padding: 0 20px; /* Giảm padding cho không gian hẹp */
-    height: auto; /* Chiều cao động theo nội dung */
-    background-position: center top;
-  }
-
+  #navbar {
+    display: none;
+}
+#hero {
+  max-width: 100%;
+  height: 50vh; /* Chiều cao tối ưu cho mobile */
+    align-items: left; /* Canh giữa nội dung */
+    text-align: left; /* Văn bản căn giữa */
+    background-position: center;
+    background-size: 768px 80vh;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    margin-top: 1px;
+}
+#hero h2 {
+  font-size: 16px;
+}
+#hero h4 {
+  font-size: 20px;
+}
+#hero p {
+  font-size: 16px;
+}
+.menu-icon {
+    display: block;
+}
   #product1 .pro {
-    width: 100%; /* Sản phẩm chiếm 100% màn hình trên thiết bị nhỏ */
+    width: 48%; /* Sản phẩm chiếm 100% màn hình trên thiết bị nhỏ */
     min-width: auto;
   }
-
+#banner {
+  max-width: 100%;
+  height: 50vh; /* Chiều cao tối ưu cho mobile */
+    background-position: center;
+   background-size: 700px 500px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    margin-top: 1px;
+}
   #sm-banner .banner-box, 
   #sm-banner .banner-box2 {
     min-width: 100%; /* Banner chiếm toàn bộ chiều rộng */
-    height: auto; /* Chiều cao tự động theo nội dung */
+    height: 80vh; /* Chiều cao tự động theo nội dung */
+  }
+  .banner3 {
+    height:300px;
+    background-size:500px 300px;
+    background-attachment: scroll;
+
+  }
+  #newsletter .form {
+    flex-direction: column;
+    width: 200px;
   }
 
+  #newsletter input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
   h1, h2, h4 {
     font-size: 24px; /* Giảm kích thước chữ trên màn hình nhỏ */
   }
@@ -779,5 +827,22 @@ footer {
   p {
     font-size: 14px; /* Chữ nhỏ hơn để phù hợp với không gian hẹp */
   }
+  .brand-story h2, .news-section h2 {
+    font-size: 30px;
+  }
 }
- 
+
+  @media (max-width: 480px) {
+    #product1 .pro {
+      width: 100%; /* Sản phẩm chiếm 100% màn hình trên thiết bị nhỏ */
+      min-width: auto;
+    }
+    #sm-banner .banner-box, 
+  #sm-banner .banner-box2 {
+    min-width: 100%; /* Banner chiếm toàn bộ chiều rộng */
+    height: 50vh; /* Chiều cao tự động theo nội dung */
+  }
+}
+
+  
+   
