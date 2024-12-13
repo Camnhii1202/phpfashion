@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh Toán</title>
-    <link rel="stylesheet" href="checkout_1.1.css">
+    <link rel="stylesheet" href="Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
@@ -43,16 +43,11 @@
     </nav>
   </div>
     <main class="checkout-page">
-        <!-- Phần tiêu đề tiến trình -->
-        <div class="progress-bar">
-            <span class="step active">1. Thông tin giao hàng</span>
-            <span class="step">2. Payment</span>
-            <span class="step">3. Method</span>
-        </div>
+        
         <div class="checkout-container">
             <!-- Cột trái: Thông tin giao hàng -->
             <div class="delivery-details">
-                <h2>Delivery details</h2>
+                <h2>Thông Tin Giao Hàng</h2>
                 <form>
                     <label for="country">QUỐC GIA <span>*</span></label>
                     <select id="country" name="country" required>
@@ -92,7 +87,7 @@
 
             <!-- Cột phải: Tóm tắt đơn hàng -->
             <div class="order-summary">
-                <h2>TÓM TẮT ĐƠN HÀNG</h2>
+                <h2>Tóm Tắt Đơn Hàng</h2>
                 <div class="product-item">
                     <img src="images.jpg" alt="Sản phẩm" class="product-image">
                     <div class="product-details">
