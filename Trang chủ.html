@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <title>Trang chủ - Lsoul</title>
-  <link rel="stylesheet" href="Trang chủ.css">
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
   <!-- Header --> 
@@ -374,8 +374,26 @@
       <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
     </div>
   </footer>
-  <script src="Trang chủ.js" >
-    
+  <script  >
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-btn');
+
+    menuIcon.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+    });
+
+    document.addEventListener('scroll', function () {
+        const parallaxImg = document.querySelector('.parallax-image img');
+        const scrollPosition = window.scrollY;
+        
+        // Điều chỉnh giá trị dịch chuyển
+        parallaxImg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+      }); 
   </script>
 </body>
 </html>
