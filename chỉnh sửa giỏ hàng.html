@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="chỉnh sửa giỏ hàng.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+<!-- Header --> 
+<section id="header">
+  <div class="header-container">
+        <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
+          <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
+        </a>
+  </div>  
+   <div>
+      <ul id="navbar" class="navbar">
+      <li><a class="active" href="Trang chủ.html">Trang chủ</a></li>
+      <li><a href="shop.html">Cửa hàng</a></li>
+      <li><a href="aboutus.html">Về chúng tôi</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="Liên hệ 2.html">Liên hệ</a></li>
+      <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
+      <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
+      <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+      </div>
+      <div class="menu-icon" id="menu-icon">☰</div>
+</section>
+<div class="mobile-menu" id="mobile-menu">
+  <span class="close-btn" id="close-btn">&times;</span>
+  <nav>
+      <a href="Trang chủ.html">Trang chủ</a>
+      <a href="shop.html">Cửa hàng</a>
+      <a href="aboutus.html">Về chúng tôi</a>
+      <a href="blog.html">Blog</a>
+      <a href="Liên hệ 2.html">Liên hệ</a>
+   <a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a>
+                <a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a>
+                <a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a>
+  </nav>
+</div>
+    <div class="cart-container">
+        <div class="cart-header">Card</div>
+        <div class="cart-item">
+            <img src="https://via.placeholder.com/80x100" alt="Lind Dress">
+            <div class="cart-details">
+                <p>LIND DRESS</p>
+                <p class="price">1.300.000₫</p>
+            </div>
+        </div>
+
+        <div class="size-selector">
+            <p>Chọn kích cỡ</p>
+            <div class="sizes">
+                <button class="size-btn">S</button>
+                <button class="size-btn">M</button>
+                <button class="size-btn">L</button>
+                <button class="size-btn">XL</button>
+            </div>
+        </div>
+
+        <div class="quantity-selector">
+            <p>Quantity</p>
+            <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+            <input type="text" id="quantity" value="1" readonly>
+            <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
+        </div>
+
+        <a href="giỏ hàng.html"><button class="checkout-btn">THÊM VÀO GIỎ</button></a>
+    </div>
+
+    <script>
+        // Handle size selection
+        document.querySelectorAll('.size-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        // Handle quantity change
+        function updateQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue + change > 0) {
+                quantityInput.value = currentValue + change;
+            }
+        }
+    </script>
+    <!--New-letter-->
+  <section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4> ĐĂNG KÝ NHẬN BẢNG TIN</h4>
+      <p> Nhận thông tin cập qua qua Email về cửa hàng mới nhất của chúng tôi và <span> các ưu đãi đặc biệt </span> </p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder = "info@lsoul.com">
+      <button class="normal"> Đăng ký </button>
+
+    </div>
+    <div>
+
+    </div>
+  </section>
+  
+  <!--footer-->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>CHÚNG TÔI CÓ THỂ GIÚP GÌ</h4>
+        <p><a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a></p>
+        <p><i class="fa-solid fa-phone"></i> +84777071707 <span class="online">Online</span></p>
+        <p>Opening hours 8:30 AM - 10 PM</p>
+      </div>
+      <div class="footer-section">
+        <h4>VỀ LSOUL</h4>
+        <ul>
+          <li><a href="#">Về Chúng Tôi</a></li>
+          <li><a href="#">Feedback</a></li>
+          <li><a href="#">Cửa Hàng</a></li>
+          <li><a href="#">Work With Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>CHÍNH SÁCH LSOUL</h4>
+        <ul>
+          <li><a href="#">Chính Sách Đổi Trả</a></li>
+          <li><a href="#">Chính Sách Bảo Mật</a></li>
+          <li><a href="#">Hướng Dẫn Thanh Toán</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>DANH MỤC</h4>
+        <ul>
+          <li><a href="#">Set</a></li>
+          <li><a href="#">Đầm</a></li>
+          <li><a href="#">Áo</a></li>
+          <li><a href="#">Quần</a></li>
+          <li><a href="#">Chân Váy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>THEO DÕI CHÚNG TÔI</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-solid fa-shop"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="language-switch">
+        🌐 <a href="#">THAI</a> | <a href="#">ENGLISH</a> | <a href="#" class="active">TIẾNG VIỆT</a>
+      </div>
+      <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
+    </div>
+  </footer>
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeBtn = document.getElementById("close-btn");
+    
+    // Khi nhấn vào biểu tượng menu
+    menuIcon.addEventListener("click", () => {
+        mobileMenu.classList.add("open"); // Thêm class "open" để mở menu
+    });
+    
+    // Khi nhấn vào nút đóng menu
+    closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("open"); // Loại bỏ class "open" để đóng menu
+    });
+    
+    // Đóng menu khi nhấn vào bất kỳ link nào trong menu
+    const navLinks = mobileMenu.querySelectorAll("a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+        });
+    });
+    
+    </script>
+    
+</body>
+</html>
