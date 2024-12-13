@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="Style.css">
     <title>Trang Sản Phẩm</title>
 </head>
 
@@ -45,9 +45,9 @@
       </div>
     
 
-    <div class="container">
+    <div class="sanpham-container">
         <!-- Chi tiết sản phẩm -->
-        <div class="products" id="12">
+        <div class="sanpham" id="12">
             <div class="product-image">
                 <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/ROCKY-TOP-4.jpg" alt="Sản phẩm">
             </div>
@@ -110,7 +110,7 @@
 
         <!-- Nội dung của các Tab -->
         <div id="detail" class="tab-content active">
-            <h2>Thông tin chi tiết sản phẩm</h2>
+            <h2><strong>Thông tin chi tiết sản phẩm</strong></h2>
             <p><strong>SẢN PHẨM BAO GỒM:</strong></p>
             <p>Áo</p>
             <p>Chất liệu: Nỉ mềm</p>
@@ -286,7 +286,44 @@
           <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
         </div>
       </footer>
-    
+    <style>
+        .tabs {
+    margin-top: 20px;
+    display: flex;
+    cursor: pointer;
+    list-style-type: none;
+    padding: 0;
+}
+
+.tabs li {
+    margin-right: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    border: 0.5px solid #000;
+}
+
+.tabs li.active {
+    background-color: black;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border-top: 1px solid hsl(0, 1%, 77%);
+}
+
+.tab-content.active {
+    display: block;
+}
+.tab-content.active h2 {
+    font-size:20px;
+    font-weight: 100px;
+    text-align: left;
+}
+    </style>
       <script>
 
     //Tăng, giảm số lượng sản phẩm
