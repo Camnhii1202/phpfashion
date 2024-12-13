@@ -4,395 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Thanh Toán</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-    /* Header */
- #header {
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background: #ffffff;
-    box-shadow:  0 5px 15px rgba(0,0,0,0.06);;
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-  }
-  #navbar {
-  display:flex;
-  align-items:center;
-  justify-content: center;
-  flex-direction: row;
-  list-style: none;
-  transition: 0.3s ease;
-  }
-  #navbar.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-}
-  #navbar li {
-    list-style: none;
-    padding:0 20px;
-    position:relative;
-  }
-  #navbar li a {
-    text-decoration: none ;
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a1a1a;
-    transition:  0.3s ease;
-  }
-  #navbar li a:hover,
-  #navbar li a.active {
-    color:#757070;
-  }
-  #navbar li a.active::after,
-  #navbar li a:hover::after {
-    content:"";
-    width: 30%;
-    background: #757070;
-    height: 2px;
-    position: absolute;
-    bottom: -4px;
-    left:20px;
-  }
-  @media (max-width: 768px) {
-    #hamburger-menu {
-        display: flex; /* Hiển thị biểu tượng hamburger */
-    }
-
-    #navbar {
-        display: none; /* Ẩn menu mặc định */
-    }
-
-    #navbar.active {
-        display: flex; /* Hiển thị menu khi nhấn hamburger */
-    }
-}
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    background: url('d748fb210234317.670dfd502fd3e.jpg')center/cover no-repeat;
-    background-color: rgba(255, 255, 255, 0.60); /* Lớp phủ màu trắng mờ */
-    background-blend-mode: overlay;
-}
-
-.container {
-    width: 1000px;
-    margin: 20px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-nav {
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.highlight {
-    font-weight: bold;
-}
-
-.content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.shipping, .order-summary {
-    width: 48%;
-}
-
-.shipping h3, .order-summary h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-}
-
-.shipping p, .order-summary p {
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 14px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.checkout {
-    background-color: black;
-    color: white;
-    border: none;
-}
-
-.order-summary .item {
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.order-summary .item img {
-    width: 80px;
-    margin-right: 15px;
-}
-
-.order-summary .details {
-    font-size: 14px;
-}
-
-.discount {
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.discount input {
-    flex: 1;
-    padding: 8px;
-    margin-right: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.discount button {
-    background-color: black;
-    color: white;
-    border: none;
-}
-
-.total {
-    font-size: 14px;
-}
-
-.total strong {
-    font-size: 16px;
-}
-/* New Letter*/
-#newsletter {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items:center;
-    background-color: #eaebea;
- }
-#newsletter h4 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #030303;
-}
-#newsletter p {
-    font-size: 16px;
-    font-weight: 600px;
-    color: #787674
-    
-}
-#newsletter p span {
-  color:#666;
-  
-}
-#newsletter .form {
-  display: flex;
-  width: 30%;
-
-
-}
-#newsletter input {
-  height: 3.125rem;
-  padding: 0 1.25em;
-  font-size: 14px;
-  width:100%;
-  border:1px solid transparent;
-  border-radius: 4px;
-  outline:none;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-
-}
-#newsletter button {
-  background-color: #030303;
-  color: #fff;
-  white-space: nowrap;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-/*footer*/
-footer {
-  background-color: #ffffff;
-  padding: 20px 40px;
-  color: #333;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 200px;
-  max-width: 200px; 
-}
-
-.footer-section h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #000;
-}
-.footer-section p{
-  font-size: 16px;
-  color:#666;
-  text-align: left;
-}
-.footer-section span {
-  color:#000;
-}
-.footer-section a {
-  color:#666;
-  text-decoration: none;
-}
-.footer-section a:hover {
-  color:#000;
-}
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 5px;
-}
-
-.footer-section ul li a {
-  text-decoration: none;
-  color: #666;
-}
-
-.footer-section ul li a:hover {
-  color: #000000;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 20px;
-  color: #666;
-  text-decoration: none;
-}
-
-.social-icons a:hover {
-  color: #000000;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-  font-size: 14px;
-}
-
-.footer-bottom .language-switch a {
-  margin: 0 5px;
-  text-decoration: none;
-  color: #666;
-}
-.footer-bottom .language-switch a:hover {
-  color:#000;
-}
-.footer-bottom .language-switch a.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.footer-bottom p {
-  margin-top: 5px;
-  color: #666;
-}
-
-.online {
-  color: green;
-  font-weight: bold;
-}
-
-.fa-envelope, .fa-phone {
-  margin-right: 5px;
-}
-@media (max-width: 480px) {
-  #header {
-    padding: 10px 20px;
-  }
-
-  #navbar li {
-    padding: 0 10px; /* Giảm padding giữa các mục menu */
-  }
-
-  #hero {
-    padding: 0 20px; /* Giảm padding cho không gian hẹp */
-    height: auto; /* Chiều cao động theo nội dung */
-    background-position: center top;
-  }
-
-  #product1 .pro {
-    width: 100%; /* Sản phẩm chiếm 100% màn hình trên thiết bị nhỏ */
-    min-width: auto;
-  }
-
-  #sm-banner .banner-box, 
-  #sm-banner .banner-box2 {
-    min-width: 100%; /* Banner chiếm toàn bộ chiều rộng */
-    height: auto; /* Chiều cao tự động theo nội dung */
-  }
-
-  h1, h2, h4 {
-    font-size: 24px; /* Giảm kích thước chữ trên màn hình nhỏ */
-  }
-
-  p {
-    font-size: 14px; /* Chữ nhỏ hơn để phù hợp với không gian hẹp */
-  }
-}
-</style>
+    <link rel="stylesheet" href="checkout_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
 <!-- Header --> 
 <section id="header">
-    <div class="header-container">
-          <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
-            <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
-          </a>
-    </div>  
-     
-     <div>
-        <ul id="navbar" class="navbar"> 
-        <li><a class="active" href="Trang chủ.html">Trang chủ</a></li>
-        <li><a href="shop.html">Cửa hàng</a></li>
-        <li><a href="aboutus.html">Về chúng tôi</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="Liên hệ 2.html">Liên hệ</a></li>
-        <li id="lg-acc"><a href="login_1.html"><i class="fa-solid fa-user"></i></a></li>
-        <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
-        <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-        </ul>
-        </div>
-  </section>
+  <div class="header-container">
+        <a href="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png">
+          <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1536/https://lsoul.b-cdn.net/wp-content/uploads/2024/10/500-X-100-1536x307.png" alt="Logo" style="max-height: 50px;">
+        </a>
+  </div>  
+   <div>
+      <ul id="navbar" class="navbar">
+      <li><a class="active" href="Trang chủ.html">Trang chủ</a></li>
+      <li><a href="shop.html">Cửa hàng</a></li>
+      <li><a href="aboutus.html">Về chúng tôi</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="Liên hệ 2.html">Liên hệ</a></li>
+      <li id="lg-acc"><a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a></li>
+      <li id="lg-search"><a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a></li>
+      <li id="lg-bag"><a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+      </div>
+      <div class="menu-icon" id="menu-icon">☰</div>
+</section>
+<div class="mobile-menu" id="mobile-menu">
+  <span class="close-btn" id="close-btn">&times;</span>
+  <nav>
+      <a href="Trang chủ.html">Trang chủ</a>
+      <a href="shop.html">Cửa hàng</a>
+      <a href="aboutus.html">Về chúng tôi</a>
+      <a href="blog.html">Blog</a>
+      <a href="Liên hệ 2.html">Liên hệ</a>
+   <a href="Tài khoản.html"><i class="fa-solid fa-user"></i></a>
+                <a href="Tìm kiếm.html"><i class="fa-solid fa-search"></i></a>
+                <a href="Giỏ hàng.html"><i class="fa-solid fa-cart-shopping"></i></a>
+  </nav>
+</div>
     <div class="container">
         <nav>
             <span>THÔNG TIN GIAO HÀNG</span> > <span class="highlight">2. PAYMENT</span> > <span>3. METHOD</span>
@@ -444,7 +93,6 @@ footer {
     </div>
   </section>
   
-  <!-- Footer -->
   <footer>
     <div class="footer-container">
       <div class="footer-section">
@@ -456,18 +104,18 @@ footer {
       <div class="footer-section">
         <h4>VỀ LSOUL</h4>
         <ul>
-          <li><a href="aboutus.html">Về Chúng Tôi</a></li>
+          <li><a href="#">Về Chúng Tôi</a></li>
           <li><a href="#">Feedback</a></li>
-          <li><a href="shop.html">Cửa Hàng</a></li>
+          <li><a href="#">Cửa Hàng</a></li>
           <li><a href="#">Work With Us</a></li>
         </ul>
       </div>
       <div class="footer-section">
         <h4>CHÍNH SÁCH LSOUL</h4>
         <ul>
-          <li><a href="policy.html">Chính Sách Đổi Trả</a></li>
-          <li><a href="policy.html">Chính Sách Bảo Mật</a></li>
-          <li><a href="policy.html">Hướng Dẫn Thanh Toán</a></li>
+          <li><a href="#">Chính Sách Đổi Trả</a></li>
+          <li><a href="#">Chính Sách Bảo Mật</a></li>
+          <li><a href="#">Hướng Dẫn Thanh Toán</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -483,11 +131,11 @@ footer {
       <div class="footer-section">
         <h4>THEO DÕI CHÚNG TÔI</h4>
         <div class="social-icons">
-          <a href="https://www.facebook.com/lsoul.officiel"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/lsoul.officiel/"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@lsoul.officiel?_t=8qumpMMgNyg&_r=1"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="https://www.youtube.com/@lsoulofficial"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://shopee.vn/lsoul.vn"><i class="fa-solid fa-shop"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-solid fa-shop"></i></a>
         </div>
       </div>
     </div>
@@ -498,7 +146,30 @@ footer {
       <p>© 2023 LSOUL | GCNKD số: 41A8047682 - Ngày cấp 02/07/2020, Nơi đăng ký Sở kế hoạch đầu tư Thành Phố Hồ Chí Minh</p>
     </div>
   </footer>
-  <script src="Trang chủ.js">
-  </script>
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeBtn = document.getElementById("close-btn");
+    
+    // Khi nhấn vào biểu tượng menu
+    menuIcon.addEventListener("click", () => {
+        mobileMenu.classList.add("open"); // Thêm class "open" để mở menu
+    });
+    
+    // Khi nhấn vào nút đóng menu
+    closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("open"); // Loại bỏ class "open" để đóng menu
+    });
+    
+    // Đóng menu khi nhấn vào bất kỳ link nào trong menu
+    const navLinks = mobileMenu.querySelectorAll("a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+        });
+    });
+    
+    </script>
+    
 </body>
 </html>
