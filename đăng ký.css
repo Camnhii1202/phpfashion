@@ -1,0 +1,94 @@
+/* Tổng quan */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('d748fb210234317.670dfd502fd3e.jpg')center/cover no-repeat;
+            background-color: rgba(255, 255, 255, 0.60); /* Lớp phủ màu trắng mờ */
+            background-blend-mode: overlay;
+        }
+
+        .register-form {
+            width: 450px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.7); /* Màu nền trắng mờ */
+        }
+
+        .register-form input[type="email"],
+        .register-form input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .privacy-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+
+        .privacy-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .privacy-container a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .privacy-container a:hover {
+            text-decoration: underline;
+        }
+
+        .register-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .register-form button:hover {
+            background-color: #333;
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            color: #ccc;
+        }
+
+        .separator::before,
+        .separator::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .separator:not(:empty)::before {
+            margin-right: 10px;
+        }
+
+        .separator:not(:empty)::after {
+            margin-left: 10px;
+        }
