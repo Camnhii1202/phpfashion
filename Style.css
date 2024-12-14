@@ -2655,11 +2655,11 @@ body {
 }
 
 .btn-save {
-    background-color: #4CAF50;
+    background-color: #0f0f0f;
 }
 
 .btn-save:hover {
-    background-color: #45a049;
+    background-color: #393a39;
 }
 
 .btn-cancel {
