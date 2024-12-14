@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cập Nhật Thông Tin Khách Hàng</title>
+    <!-- Liên kết CSS -->
+    <link rel="stylesheet" href="Cập nhật thông tin khánh hàng.css">
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Thư viện Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="form-title">Cập Nhật Thông Tin Khách Hàng</h2>
+        <form class="customer-form">
+            <!-- Họ và tên -->
+            <div class="input-group">
+                <label for="full-name">Họ và Tên</label>
+                <div class="input-wrapper">
+                    <i class="fa fa-user"></i>
+                    <input type="text" id="full-name" placeholder="Nhập họ và tên">
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+                <label for="email">Email</label>
+                <div class="input-wrapper">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Nhập email">
+                </div>
+            </div>
+
+            <!-- Số điện thoại -->
+            <div class="input-group">
+                <label for="phone">Số Điện Thoại</label>
+                <div class="input-wrapper">
+                    <i class="fa fa-phone"></i>
+                    <input type="tel" id="phone" placeholder="Nhập số điện thoại">
+                </div>
+            </div>
+
+            <!-- Địa chỉ -->
+            <div class="input-group">
+                <label for="address">Địa Chỉ</label>
+                <div class="input-wrapper">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <input type="text" id="address" placeholder="Nhập địa chỉ">
+                </div>
+            </div>
+
+            <!-- Trạng thái -->
+            <div class="input-group">
+                <label for="status">Trạng Thái</label>
+                <select id="status">
+                    <option value="active">Hoạt Động</option>
+                    <option value="inactive">Không Hoạt Động</option>
+                </select>
+            </div>
+
+            <!-- Nút hành động -->
+            <div class="form-buttons">
+                <button type="submit" class="btn btn-save">Lưu Thông Tin</button>
+                <button type="reset" class="btn btn-cancel">Hủy</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
