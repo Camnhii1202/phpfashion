@@ -2561,7 +2561,7 @@ body {
 }
 
 body {
-    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    background: White;
     color: #333;
     height: 100vh;
     display: flex;
@@ -2570,14 +2570,15 @@ body {
 }
 
 .form-container {
-    background-color: #fff;
+    background-color:white;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
     animation: fadeIn 1s ease-in-out;
-    min-height: 1000px;
+    min-height: 700px;
+    border: 1px solid #ddd;
 }
 
 /* Tiêu đề */
