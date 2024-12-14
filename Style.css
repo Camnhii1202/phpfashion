@@ -950,18 +950,22 @@ a {
     display: flex;
     padding: 20px;
     border-bottom: 1px solid #ddd;
-    margin-top: 100px;
-    
+    margin: 100px auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center; 
+    max-width: 1200px;
 }
 
 .product-image {
-    width: 40%;
+    width: 50%;
     padding-right: 20px;
 }
 
 .product-image img {
     width: 100%;
     height: auto;
+    max-width: 500px; 
 }
 .product:hover {
     transform: scale(1.05);
@@ -2429,6 +2433,4 @@ form textarea {
         
         
       }
-
-
       
